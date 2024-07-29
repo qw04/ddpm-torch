@@ -14,7 +14,7 @@ class TrainToy:
         parser.add_argument("--dataset", choices=["gaussian8", "gaussian25", "swissroll"], default="gaussian8")
         parser.add_argument("--size", default=100000, type=int)
         parser.add_argument("--root", default="~/datasets", type=str, help="root directory of datasets")
-        parser.add_argument("--epochs", default=100, type=int, help="total number of training epochs")
+        parser.add_argument("--epochs", default=10, type=int, help="total number of training epochs")
         parser.add_argument("--lr", default=0.001, type=float, help="learning rate")
         parser.add_argument("--beta1", default=0.9, type=float, help="beta_1 in Adam")
         parser.add_argument("--beta2", default=0.999, type=float, help="beta_2 in Adam")
@@ -30,7 +30,7 @@ class TrainToy:
         parser.add_argument("--image-dir", default="./images/train", type=str)
         parser.add_argument("--chkpt-dir", default="./chkpts", type=str)
         parser.add_argument("--chkpt-intv", default=100, type=int, help="frequency of saving a checkpoint")
-        parser.add_argument("--eval-intv", default=10, type=int)
+        parser.add_argument("--eval-intv", default=1, type=int)
         parser.add_argument("--seed", default=1234, type=int, help="random seed")
         parser.add_argument("--resume", action="store_true", help="to resume training from a checkpoint")
         parser.add_argument("--device", default="cuda:0", type=str)
@@ -39,15 +39,19 @@ class TrainToy:
 
         self.args = parser.parse_args()
 
-    def set_data(self, l, retraining_iteration):
-        # set seed
+    def set_data(self, l=0, retraining_iteration=0, synth = []):
+        
         seed_all(self.args.seed)
-
-        # prepare toy data
         self.in_features = 2
         self.root = os.path.expanduser(self.args.root)
         self.num_batches = self.args.size // self.args.batch_size
-        self.trainloader = DataStreamer(self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches)
+        
+        if retraining_iteration == 0:
+            self.trainloader = DataStreamer(self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches)
+
+        else:
+            self.trainloader = DataStreamer(self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches, synth = synth)
+            
 
     def set_parameters(self):
         # training parameters
@@ -86,12 +90,13 @@ class TrainToy:
         self.scheduler = lr_scheduler.LambdaLR(
             optimizer, lr_lambda=lambda t: min((t + 1) /self.args.lr_warmup, 1.0)) if self.args.lr_warmup > 0 else None
 
-    def train(self):
+    def train(self, model):
         # load trainer
         grad_norm = 0  # gradient global clipping is disabled
         eval_intv = self.args.eval_intv
+        
         trainer = Trainer(
-            model=self.model,
+            model=self.model if model is None else model,
             optimizer=self.optimizer,
             diffusion=self.diffusion,
             epochs=self.args.epochs,
@@ -122,6 +127,11 @@ class TrainToy:
                 print("Starting from scratch...")
 
         trainer.train(evaluator, chkpt_path=self.chkpt_path, image_dir=self.image_dir, xlim=xlim, ylim=ylim)
+        
+        shape = (self.args.size,) + trainer.shape
+        sample = trainer.diffusion.p_sample(denoise_fn=trainer.model, shape=shape, device=trainer.device, noise=None)
+        
+        return sample.cpu().numpy(), trainer.model
 
 
 if __name__ == "__main__":

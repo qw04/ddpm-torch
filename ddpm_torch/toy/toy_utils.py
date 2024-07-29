@@ -71,7 +71,7 @@ class Trainer:
         for e in range(self.start_epoch, self.epochs):
             self.stats.reset()
             self.model.train()
-            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs") as t:
+            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs", disable=True) as t: # such a bad way of handling things - still my thing tho
                 for i, x in enumerate(t):
                     self.step(x.to(self.device))
                     t.set_postfix(self.current_stats)

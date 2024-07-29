@@ -8,12 +8,15 @@ __all__ = ["Gaussian8", "Gaussian25", "SwissRoll", "DataStreamer"]
 
 
 class ToyDataset(Dataset):
-    def __init__(self, size: int, stdev: float, random_state: int = None):
+    def __init__(self, size: int, stdev: float, random_state: int = None, synth = []):
         self.size = size
         self.noise = stdev
         self.random_state = random_state
         self.stdev = self._calc_stdev()
-        self.data = self._sample()
+        
+        if len(synth) == 0: self.data = self._sample()
+        else: self.data = np.concatenate((np.array(synth), self._sample()))
+        np.random.shuffle(self.data)
         
     def _calc_stdev(self):
         pass
@@ -38,9 +41,13 @@ class Gaussian8(ToyDataset):
         for t in range(8)
     ]  # scale x (8 roots of z^8 = 1)
 
-    def __init__(self, size, stdev=0.02, random_state=1234):
+    def __init__(self, size, stdev=0.02, random_state=1234, synth = []):
         self.modes = self.scale * np.array(self.modes, dtype=np.float32)
-        super(Gaussian8, self).__init__(size, stdev, random_state)
+        if len(synth) == 0:
+            super(Gaussian8, self).__init__(size, stdev, random_state, synth)
+        else:
+            super(Gaussian8, self).__init__(int(np.ceil((1 - len(synth)/size) * size)), stdev, random_state, synth)
+    
     
     def _calc_stdev(self):
         # total variance = expected conditional variance + variance of conditional expectation
@@ -59,9 +66,9 @@ class Gaussian25(ToyDataset):
     scale = 2
     modes = [(i, j) for i in range(-2, 3) for j in range(-2, 3)]
 
-    def __init__(self, size, stdev=0.05, random_state=1234):
+    def __init__(self, size, stdev=0.05, random_state=1234, synth = []):
         self.modes = self.scale * np.array(self.modes, dtype=np.float32)
-        super(Gaussian25, self).__init__(size, stdev, random_state)
+        super(Gaussian25, self).__init__(size, stdev, random_state, synth)
 
     def _calc_stdev(self):
         # x-y symmetric; around 2.828
@@ -93,8 +100,8 @@ class SwissRoll(ToyDataset):
     E[y] = 2/(3*pi) and var(y) = (39/8)*pi^2 - 15/4
     """
 
-    def __init__(self, size, stdev=0.25, random_state=1234):
-        super(SwissRoll, self).__init__(size, stdev, random_state)
+    def __init__(self, size, stdev=0.25, random_state=1234, synth = []):
+        super(SwissRoll, self).__init__(size, stdev, random_state, synth)
 
     def _calc_stdev(self):
         # calculate the stdev's for the data
@@ -114,13 +121,13 @@ class SwissRoll(ToyDataset):
 
 class DataStreamer:
 
-    def __init__(self, dataset: ToyDataset, batch_size: int, num_batches: int, resample: bool = False):
+    def __init__(self, dataset: ToyDataset, batch_size: int, num_batches: int, resample: bool = False, synth = []):
         
         dataset = self.dataset_map(dataset)
         self.batch_size = batch_size
         self.num_batches = num_batches
         self.resample = resample
-        self.dataset = dataset(batch_size * num_batches, random_state=None)
+        self.dataset = dataset(batch_size * num_batches, random_state=None, synth = synth)
 
     def __iter__(self):
         cnt = 0
@@ -131,6 +138,7 @@ class DataStreamer:
             cnt += 1
             if cnt >= self.num_batches:
                 break
+
         if self.resample:
             self.dataset.resample()
 
@@ -146,7 +154,12 @@ class DataStreamer:
         }.get(dataset, None)
 
 
+def main():
+    exp = DataStreamer("gaussian8", 5, 1, synth=[[1, 2], [3, 4]])
+
 if __name__ == "__main__":
+    main()
+    # exit()
     import os
     import matplotlib as mpl
     import matplotlib.pyplot as plt
