@@ -40,17 +40,14 @@ class Decoder(nn.Module):
     normalize = DEFAULT_NORMALIZER
     nonlinearity = DEFAULT_NONLINEARITY
 
-    def __init__(self, in_features, mid_features, num_temporal_layers):
+    def __init__(self, in_features, mid_features, out_features, num_temporal_layers):
         super(Decoder, self).__init__()
 
         self.in_fc = Linear(in_features, mid_features, bias=False)
-        self.temp_fc = Sequential(*([TemporalLayer(
-            mid_features, mid_features, mid_features), ] * num_temporal_layers))
+        self.temp_fc = Sequential(*([TemporalLayer(mid_features, mid_features, mid_features), ] * num_temporal_layers))
         self.out_norm = self.normalize(mid_features)
-        self.out_fc = Linear(mid_features, in_features)
-        self.t_proj = nn.Sequential(
-            Linear(mid_features, mid_features),
-            self.nonlinearity)
+        self.out_fc = Linear(mid_features, out_features)
+        self.t_proj = nn.Sequential(Linear(mid_features, mid_features), self.nonlinearity)
         self.mid_features = mid_features
 
     def forward(self, x, t):

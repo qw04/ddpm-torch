@@ -113,7 +113,6 @@ class Trainer:
 
         # maintain a process-specific generator
         self.generator = torch.Generator(device).manual_seed(8191 + self.rank)
-
         self.sample_seed = 131071 + self.rank  # process-specific seed
 
         self.use_ema = use_ema
@@ -177,9 +176,7 @@ class Trainer:
         if diffusion is None:
             diffusion = self.diffusion
         with self.ema:
-            sample = diffusion.p_sample(
-                denoise_fn=self.model, shape=shape,
-                device=self.device, noise=noise, seed=sample_seed)
+            sample = diffusion.p_sample(denoise_fn=self.model, shape=shape, device=self.device, noise=noise, seed=sample_seed)
         if self.distributed:
             # equalizes GPU memory usages across all processes within the same process group
             sample_list = [torch.zeros(shape, device=self.device) for _ in range(self.world_size)]

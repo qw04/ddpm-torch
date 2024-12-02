@@ -1,0 +1,1576 @@
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:33:50.429046
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:38:54.503502
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:43:56.329176
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:49:00.407924
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:54:05.075393
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian8 and l value 0.0 at time 2024-12-01 12:59:09.781657
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian8 and l value 0.0 at time 2024-12-01 13:04:12.712142
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian8 and l value 0.0 at time 2024-12-01 13:09:15.258485
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian8 and l value 0.0 at time 2024-12-01 13:14:17.341623
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian8 and l value 0.0 at time 2024-12-01 13:19:19.746214
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:29:25.126396
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:34:27.524364
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:39:30.116838
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:44:31.412933
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:49:32.691723
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:54:34.185079
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian8 and l value 0.25 at time 2024-12-01 13:59:41.861451
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian8 and l value 0.25 at time 2024-12-01 14:04:42.626475
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian8 and l value 0.25 at time 2024-12-01 14:09:43.153162
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian8 and l value 0.25 at time 2024-12-01 14:14:44.048319
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:24:37.414220
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:29:38.323388
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:34:40.078135
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:39:40.728268
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:44:41.613029
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:49:43.014751
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:54:44.324602
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian8 and l value 0.5 at time 2024-12-01 14:59:45.380655
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian8 and l value 0.5 at time 2024-12-01 15:04:46.422046
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian8 and l value 0.5 at time 2024-12-01 15:09:47.693249
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:19:41.685076
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:24:43.007047
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:29:44.179659
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:34:45.124195
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:39:45.382612
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:44:45.867799
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:49:46.558171
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:54:47.098420
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian8 and l value 0.75 at time 2024-12-01 15:59:48.150017
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian8 and l value 0.75 at time 2024-12-01 16:04:48.860550
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:14:42.045451
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:19:43.044168
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:24:43.555666
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:29:44.631524
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:34:46.383406
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:39:47.664455
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:44:49.002641
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:50:18.017514
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian8 and l value 1.0 at time 2024-12-01 16:55:19.090491
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian8 and l value 1.0 at time 2024-12-01 17:00:20.207435
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:10:12.524250
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:15:12.263203
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:20:12.366591
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:25:13.360513
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:30:14.383006
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:35:15.130538
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:40:16.082753
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:45:17.019985
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:50:43.543910
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian25 and l value 0.0 at time 2024-12-01 17:55:44.811285
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:05:38.156996
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:10:38.170526
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:15:37.810876
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:20:37.739080
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:25:38.576118
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:30:38.142668
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:35:38.824985
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:40:39.667262
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:45:40.982372
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian25 and l value 0.25 at time 2024-12-01 18:50:41.730977
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:00:35.204179
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:05:36.235934
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:10:36.975292
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:15:38.055272
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:20:50.995505
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:25:52.118040
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:30:52.790649
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:35:58.072831
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:41:56.221727
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian25 and l value 0.5 at time 2024-12-01 19:46:56.434207
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian25 and l value 0.75 at time 2024-12-01 19:56:50.576677
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:01:51.600186
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:06:52.193680
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:11:53.495706
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:16:54.799171
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:21:56.204517
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:26:57.324651
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:32:00.705545
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:37:01.571752
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian25 and l value 0.75 at time 2024-12-01 20:42:01.907761
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian25 and l value 1.0 at time 2024-12-01 20:51:55.364975
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian25 and l value 1.0 at time 2024-12-01 20:56:56.237604
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:01:57.265364
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:06:58.553318
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:11:58.855476
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:17:00.047601
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:22:00.458118
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:27:00.825509
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:32:01.565799
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian25 and l value 1.0 at time 2024-12-01 21:37:02.567776
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian25.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset swissroll and l value 0.0 at time 2024-12-01 21:47:07.160183
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset swissroll and l value 0.0 at time 2024-12-01 21:52:10.716101
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset swissroll and l value 0.0 at time 2024-12-01 21:57:15.631173
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset swissroll and l value 0.0 at time 2024-12-01 22:02:20.168240
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset swissroll and l value 0.0 at time 2024-12-01 22:07:25.137801
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset swissroll and l value 0.0 at time 2024-12-01 22:12:29.981331
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset swissroll and l value 0.0 at time 2024-12-01 22:17:34.596020
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset swissroll and l value 0.0 at time 2024-12-01 22:22:39.782822
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset swissroll and l value 0.0 at time 2024-12-01 22:27:45.898144
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset swissroll and l value 0.0 at time 2024-12-01 22:32:53.253049
+Resume traing : True from ./chkpts/ddpm_0.0_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset swissroll and l value 0.25 at time 2024-12-01 22:42:52.526077
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset swissroll and l value 0.25 at time 2024-12-01 22:47:53.118542
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset swissroll and l value 0.25 at time 2024-12-01 22:52:53.578061
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset swissroll and l value 0.25 at time 2024-12-01 22:57:53.758584
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset swissroll and l value 0.25 at time 2024-12-01 23:02:54.342727
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset swissroll and l value 0.25 at time 2024-12-01 23:07:54.990619
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset swissroll and l value 0.25 at time 2024-12-01 23:12:54.821501
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset swissroll and l value 0.25 at time 2024-12-01 23:17:54.492153
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset swissroll and l value 0.25 at time 2024-12-01 23:22:55.081010
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset swissroll and l value 0.25 at time 2024-12-01 23:27:56.034567
+Resume traing : True from ./chkpts/ddpm_0.25_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset swissroll and l value 0.5 at time 2024-12-01 23:37:56.759976
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset swissroll and l value 0.5 at time 2024-12-01 23:42:57.417465
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset swissroll and l value 0.5 at time 2024-12-01 23:47:58.208470
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset swissroll and l value 0.5 at time 2024-12-01 23:52:58.964274
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset swissroll and l value 0.5 at time 2024-12-01 23:58:00.398482
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset swissroll and l value 0.5 at time 2024-12-02 00:03:02.650275
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset swissroll and l value 0.5 at time 2024-12-02 00:08:03.196254
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset swissroll and l value 0.5 at time 2024-12-02 00:13:04.163983
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset swissroll and l value 0.5 at time 2024-12-02 00:18:22.193707
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset swissroll and l value 0.5 at time 2024-12-02 00:23:44.480037
+Resume traing : True from ./chkpts/ddpm_0.5_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset swissroll and l value 0.75 at time 2024-12-02 00:33:41.138141
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset swissroll and l value 0.75 at time 2024-12-02 00:38:41.954021
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset swissroll and l value 0.75 at time 2024-12-02 00:43:42.515715
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset swissroll and l value 0.75 at time 2024-12-02 00:48:43.264693
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset swissroll and l value 0.75 at time 2024-12-02 00:53:44.486190
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset swissroll and l value 0.75 at time 2024-12-02 00:58:45.847417
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset swissroll and l value 0.75 at time 2024-12-02 01:03:47.505484
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset swissroll and l value 0.75 at time 2024-12-02 01:08:48.488073
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset swissroll and l value 0.75 at time 2024-12-02 01:13:49.694724
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset swissroll and l value 0.75 at time 2024-12-02 01:18:51.091902
+Resume traing : True from ./chkpts/ddpm_0.75_swissroll.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset swissroll and l value 1.0 at time 2024-12-02 01:28:49.076802
+error in dataset swissroll and l value 1.0
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:33:41.663030
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:38:42.372023
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:43:42.532342
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:48:44.227346
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:53:46.171286
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian2 and l value 0.0 at time 2024-12-02 01:58:48.024116
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian2 and l value 0.0 at time 2024-12-02 02:03:50.790543
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian2 and l value 0.0 at time 2024-12-02 02:08:54.255981
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian2 and l value 0.0 at time 2024-12-02 02:13:56.665594
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian2 and l value 0.0 at time 2024-12-02 02:18:59.349857
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:28:55.820882
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:33:58.107602
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:39:00.849176
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:44:03.237039
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:49:08.261394
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:54:15.124535
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian2 and l value 0.25 at time 2024-12-02 02:59:18.754525
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian2 and l value 0.25 at time 2024-12-02 03:04:29.772114
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian2 and l value 0.25 at time 2024-12-02 03:09:34.482175
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian2 and l value 0.25 at time 2024-12-02 03:14:36.277488
+Resume traing : True from ./chkpts/ddpm_0.25_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:24:28.694433
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:29:30.174146
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:34:31.939705
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:39:34.005112
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:44:36.340477
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:49:38.548454
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:54:40.009795
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian2 and l value 0.5 at time 2024-12-02 03:59:41.779337
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian2 and l value 0.5 at time 2024-12-02 04:04:43.315197
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian2 and l value 0.5 at time 2024-12-02 04:09:44.783734
+Resume traing : True from ./chkpts/ddpm_0.5_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:19:38.939521
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:24:40.380174
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:29:43.035172
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:34:45.824020
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:39:48.360538
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:44:50.871095
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:49:53.162351
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:54:55.042349
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian2 and l value 0.75 at time 2024-12-02 04:59:57.306796
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian2 and l value 0.75 at time 2024-12-02 05:04:58.744318
+Resume traing : True from ./chkpts/ddpm_0.75_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:14:54.431196
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:19:56.673564
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:24:59.279484
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:30:01.534274
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:35:03.992930
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:40:06.876405
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:45:08.917118
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:50:10.790498
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian2 and l value 1.0 at time 2024-12-02 05:55:12.736471
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian2 and l value 1.0 at time 2024-12-02 06:00:32.211649
+Resume traing : True from ./chkpts/ddpm_1.0_gaussian2.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000
+iteration 0 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:10:32.789113
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 1 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:15:34.726137
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 2 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:20:36.811294
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 3 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:25:39.137476
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 4 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:30:40.477815
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 5 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:35:42.251923
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 6 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:40:45.299975
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 7 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:45:47.000512
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 8 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:50:48.268607
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+iteration 9 for dataset gaussian1 and l value 0.0 at time 2024-12-02 06:55:49.979868
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian1.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+Checkpoint file does not exist!
+Starting from scratch...
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+30000

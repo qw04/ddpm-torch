@@ -1,7 +1,7 @@
 import math
 import torch
 from .functions import normal_kl, discretized_gaussian_loglik, flat_mean
-
+from random import randint
 
 def _warmup_beta(beta_start, beta_end, timesteps, warmup_frac, dtype):
     betas = beta_end * torch.ones(timesteps, dtype=dtype)
@@ -61,21 +61,22 @@ class GaussianDiffusion:
         sqrt_alphas_bar_prev = torch.sqrt(alphas_bar_prev)
         self.sqrt_recip_alphas_bar = torch.sqrt(1. / self.alphas_bar)
         self.sqrt_recip_m1_alphas_bar = torch.sqrt(1. / self.alphas_bar - 1.)  # m1: minus 1
+        
         self.posterior_var = betas * (1. - alphas_bar_prev) / (1. - self.alphas_bar)
         self.posterior_logvar_clipped = torch.log(torch.cat([self.posterior_var[[1]], self.posterior_var[1:]]))
+    
         self.posterior_mean_coef1 = betas * sqrt_alphas_bar_prev / (1. - self.alphas_bar)
         self.posterior_mean_coef2 = torch.sqrt(alphas) * (1. - alphas_bar_prev) / (1. - self.alphas_bar)
 
         # for fixed model_var_type's
-        self.fixed_model_var, self.fixed_model_logvar = {
-            "fixed-large": (self.betas, torch.log(torch.cat([self.posterior_var[[1]], self.betas[1:]]))),
-            "fixed-small": (self.posterior_var, self.posterior_logvar_clipped)
-        }[self.model_var_type]
+        if self.model_var_type != "learned":
+            self.fixed_model_var, self.fixed_model_logvar = {
+                "fixed-large": (self.betas, torch.log(torch.cat([self.posterior_var[[1]], self.betas[1:]]))),
+                "fixed-small": (self.posterior_var, self.posterior_logvar_clipped)
+            }[self.model_var_type]
 
     @staticmethod
-    def _extract(
-            arr, t, x,
-            dtype=torch.float32, device=torch.device("cpu"), ndim=4):
+    def _extract(arr, t, x, dtype=torch.float32, device=torch.device("cpu"), ndim=4):
         if x is not None:
             dtype = x.dtype
             device = x.device
@@ -113,8 +114,7 @@ class GaussianDiffusion:
             out, model_logvar = out.chunk(2, dim=1)
             model_var = torch.exp(model_logvar)
         elif self.model_var_type in ["fixed-small", "fixed-large"]:
-            model_var, model_logvar = self._extract(self.fixed_model_var, t, x_t),\
-                                      self._extract(self.fixed_model_logvar, t, x_t)
+            model_var, model_logvar = self._extract(self.fixed_model_var, t, x_t), self._extract(self.fixed_model_logvar, t, x_t)
         else:
             raise NotImplementedError(self.model_var_type)
 
@@ -150,9 +150,8 @@ class GaussianDiffusion:
     # === sample ===
 
     def p_sample_step(self, denoise_fn, x_t, t, clip_denoised=True, return_pred=False, generator=None):
-        model_mean, _, model_logvar, pred_x_0 = self.p_mean_var(
-            denoise_fn, x_t, t, clip_denoised=clip_denoised, return_pred=True)
-        noise = torch.empty_like(x_t).normal_(generator=generator)
+        model_mean, _, model_logvar, pred_x_0 = self.p_mean_var(denoise_fn, x_t, t, clip_denoised=clip_denoised, return_pred=True)
+        noise = torch.empty_like(x_t).normal_(generator=torch.Generator(torch.device("cuda:0")).manual_seed(randint(0, 1000)))
         nonzero_mask = (t > 0).reshape((-1,) + (1,) * (x_t.ndim - 1)).to(x_t)
         sample = model_mean + nonzero_mask * torch.exp(0.5 * model_logvar) * noise
         return (sample, pred_x_0) if return_pred else sample
@@ -223,8 +222,7 @@ class GaussianDiffusion:
         # kl: weighted
         # mse: unweighted
         if self.loss_type == "kl":
-            losses = self._loss_term_bpd(
-                denoise_fn, x_0=x_0, x_t=x_t, t=t, clip_denoised=False, return_pred=False)
+            losses = self._loss_term_bpd(denoise_fn, x_0=x_0, x_t=x_t, t=t, clip_denoised=False, return_pred=False)
         elif self.loss_type == "mse":
             assert self.model_var_type != "learned"
             if self.model_mean_type == "mean":
@@ -252,17 +250,16 @@ class GaussianDiffusion:
     def calc_all_bpd(self, denoise_fn, x_0, clip_denoised=True):
         B, T = x_0.shape, self.timesteps
         t = torch.empty([B, ], dtype=torch.int64)
-        t.fill_(T - 1)
         losses = torch.zeros([B, T], dtype=torch.float32)
         mses = torch.zeros([B, T], dtype=torch.float32)
 
-        for i in range(T - 1, -1, -1):
+        for ti in range(T - 1, -1, -1):
+            t.fill_(ti)
             x_t = self.q_sample(x_0, t=t)
             loss, pred_x_0 = self._loss_term_bpd(
                 denoise_fn, x_0, x_t=x_t, t=t, clip_denoised=clip_denoised, return_pred=True)
-            losses[:, i] = loss
-            mses[:, i] = flat_mean((pred_x_0 - x_0).pow(2))
+            losses[:, ti] = loss
+            mses[:, ti] = flat_mean((pred_x_0 - x_0).pow(2))
 
         prior_bpd = self._prior_bpd(x_0)
         total_bpd = torch.sum(losses, dim=1) + prior_bpd
-        return total_bpd, losses, prior_bpd, mses

@@ -43,6 +43,7 @@ def train(rank=0, args=None, temp_dir=""):
         k: gettr(k) for k in (
             "batch_size", "beta1", "beta2", "lr", "epochs", "grad_norm", "warmup",
             "chkpt_intv", "image_intv", "num_samples", "use_ema", "ema_decay")})
+
     train_config.batch_size //= args.num_accum
     train_device = torch.device(args.train_device)
     eval_device = torch.device(args.eval_device)
@@ -233,7 +234,7 @@ def train(rank=0, args=None, temp_dir=""):
 
 
 @errors.record
-def main():
+def main(l=1):
     from argparse import ArgumentParser
 
     parser = ArgumentParser()
@@ -241,44 +242,44 @@ def main():
     parser.add_argument("--exp-name", type=str, help="name of the current experiment run")
     parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="cifar10")
     parser.add_argument("--root", default="~/datasets", type=str, help="root directory of datasets")
-    parser.add_argument("--epochs", default=50, type=int, help="total number of training epochs")
-    parser.add_argument("--lr", default=0.0002, type=float, help="learning rate")
+    parser.add_argument("--epochs", default=2000, type=int, help="total number of training epochs") # does nothing
+    parser.add_argument("--lr", default=0.0002, type=float, help="learning rate") # does nothing
     parser.add_argument("--beta1", default=0.9, type=float, help="beta_1 in Adam")
     parser.add_argument("--beta2", default=0.999, type=float, help="beta_2 in Adam")
-    parser.add_argument("--batch-size", default=128, type=int)
+    parser.add_argument("--batch-size", default=128, type=int) # does nothing
     parser.add_argument("--num-accum", default=1, type=int, help="number of mini-batches before an update")
     parser.add_argument("--block-size", default=1, type=int, help="block size used for pixel shuffle")
-    parser.add_argument("--timesteps", default=1000, type=int, help="number of diffusion steps")
-    parser.add_argument("--beta-schedule", choices=["quad", "linear", "warmup10", "warmup50", "jsd"], default="linear")
-    parser.add_argument("--beta-start", default=0.0001, type=float)
-    parser.add_argument("--beta-end", default=0.02, type=float)
-    parser.add_argument("--model-mean-type", choices=["mean", "x_0", "eps"], default="eps", type=str)
-    parser.add_argument("--model-var-type", choices=["learned", "fixed-small", "fixed-large"], default="fixed-large", type=str)  # noqa
-    parser.add_argument("--loss-type", choices=["kl", "mse"], default="mse", type=str)
-    parser.add_argument("--num-workers", default=4, type=int, help="number of workers for data loading")
+    parser.add_argument("--timesteps", default=1000, type=int, help="number of diffusion steps") # does nothing
+    parser.add_argument("--beta-schedule", choices=["quad", "linear", "warmup10", "warmup50", "jsd"], default="quad") # does nothing
+    parser.add_argument("--beta-start", default=0.0001, type=float) # does nothing
+    parser.add_argument("--beta-end", default=0.02, type=float) # does nothing
+    parser.add_argument("--model-mean-type", choices=["mean", "x_0", "eps"], default="eps", type=str) # does nothing
+    parser.add_argument("--model-var-type", choices=["learned", "fixed-small", "fixed-large"], default="fixed-large", type=str) # does nothing
+    parser.add_argument("--loss-type", choices=["kl", "mse"], default="mse", type=str) # does nothing
+    parser.add_argument("--num-workers", default=1, type=int, help="number of workers for data loading")
     parser.add_argument("--train-device", default="cuda:0", type=str)
     parser.add_argument("--eval-device", default="cuda:0", type=str)
     parser.add_argument("--image-dir", default="./images", type=str)
-    parser.add_argument("--image-intv", default=10, type=int)
-    parser.add_argument("--num-samples", default=64, type=int, help="number of images to sample and save")
+    parser.add_argument("--image-intv", default=100, type=int)
+    parser.add_argument("--num-samples", default=81, type=int, help="number of images to sample and save")
     parser.add_argument("--config-dir", default="./configs", type=str)
     parser.add_argument("--chkpt-dir", default="./chkpts", type=str)
-    parser.add_argument("--chkpt-name", default="", type=str)
-    parser.add_argument("--chkpt-intv", default=120, type=int, help="frequency of saving a checkpoint")
+    parser.add_argument("--chkpt-name", default=f"cifar10_{l}.pt", type=str)
+    parser.add_argument("--chkpt-intv", default=1000, type=int, help="frequency of saving a checkpoint")
     parser.add_argument("--seed", default=1234, type=int, help="random seed")
-    parser.add_argument("--resume", action="store_true", help="to resume training from a checkpoint")
-    parser.add_argument("--chkpt-path", default="", type=str, help="checkpoint path used to resume training")
-    parser.add_argument("--eval", action="store_true", help="whether to evaluate fid during training")
+    parser.add_argument("--resume", default=True, help="to resume training from a checkpoint") #action="store_true",
+    parser.add_argument("--chkpt-path", default=f"chkpts/cifar10/cifar10_{l}.pt", type=str, help="checkpoint path used to resume training")
+    parser.add_argument("--eval", default=True, help="whether to evaluate fid during training") #action="store_true",
     parser.add_argument("--eval-total-size", default=50000, type=int)
-    parser.add_argument("--eval-batch-size", default=256, type=int)
-    parser.add_argument("--use-ema", action="store_true", help="whether to use exponential moving average")
-    parser.add_argument("--use-ddim", action="store_true", help="whether to use DDIM sampler for evaluation")
+    parser.add_argument("--eval-batch-size", default=250, type=int)
+    parser.add_argument("--use-ema", default=True, help="whether to use exponential moving average") # does nothing
+    parser.add_argument("--use-ddim", default=False, help="whether to use DDIM sampler for evaluation") #, action="store_true"
     parser.add_argument("--skip-schedule", choices=["linear", "quadratic"], default="linear", type=str)
-    parser.add_argument("--subseq-size", default=50, type=int)
-    parser.add_argument("--ema-decay", default=0.9999, type=float, help="decay factor of ema")
-    parser.add_argument("--distributed", action="store_true", help="whether to use distributed training")
-    parser.add_argument("--rigid-launch", action="store_true", help="whether to use torch multiprocessing spawn")
-    parser.add_argument("--num-gpus", default=1, type=int, help="number of gpus for distributed training")
+    parser.add_argument("--subseq-size", default=100, type=int)
+    parser.add_argument("--ema-decay", default=0.9999, type=float, help="decay factor of ema") # does nothing
+    parser.add_argument("--distributed", default=True, help="whether to use distributed training") #, action="store_true"
+    parser.add_argument("--rigid-launch", default=True, help="whether to use torch multiprocessing spawn") #action="store_true",
+    parser.add_argument("--num-gpus", default=3, type=int, help="number of gpus for distributed training")
     parser.add_argument("--dry-run", action="store_true", help="test-run till the first model update completes")
 
     args = parser.parse_args()

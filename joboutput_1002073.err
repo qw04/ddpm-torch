@@ -1,0 +1,12 @@
+  0%|          | 0/6 [00:00<?, ?it/s]
+  0%|          | 0/5 [00:00<?, ?it/s][A
+
+  0%|          | 0/10 [00:00<?, ?it/s][A[A  0%|          | 0/10 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/project.py", line 52, in main
+    many_iterations(training_iterations, l_val, path_to_save(dataset, l_val), path_to_image(dataset), model_var_type, dataset)
+  File "/dcs/22/u2211900/ddpm-torch/project.py", line 37, in many_iterations
+    print(f"iteration {t} for dataset {dataset} and l value {l} at time {datetime.now()}")
+AttributeError: module 'datetime' has no attribute 'now'
+
+ 20%|██        | 1/5 [05:21<21:25, 321.34s/it][Aslurmstepd: error: *** JOB 1002073 ON gecko-01 CANCELLED AT 2024-12-01T11:04:35 ***

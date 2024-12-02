@@ -60,35 +60,37 @@ class Trainer:
         self.optimizer.step()
         self.stats.update(B, loss=loss.item() * B)
 
-    def train(self, evaluator=None, chkpt_path=None, image_dir=None, **plot_kwargs):
+    def train(self, evaluator=None, chkpt_path=None, image_dir=None, bins=100, cmap="Blues", **plot_kwargs):
 
         def sample_fn(n):
             shape = (n,) + self.shape
-            sample = self.diffusion.p_sample(
-                denoise_fn=self.model, shape=shape, device=self.device, noise=None)
+            sample = self.diffusion.p_sample(denoise_fn=self.model, shape=shape, device=self.device, noise=None)
             return sample.cpu().numpy()
 
         for e in range(self.start_epoch, self.epochs):
             self.stats.reset()
             self.model.train()
-            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs", disable=True) as t: # such a bad way of handling things - still my thing tho
+            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs", disable=True) as t:
                 for i, x in enumerate(t):
-                    self.step(x.to(self.device))
+                    self.step(x.to(self.device)) # training once
                     t.set_postfix(self.current_stats)
                     if i == len(self.trainloader) - 1:
+                        
                         eval_results = dict()
                         if (e + 1) % self.eval_intv == 0:
                             self.model.eval()
                             if evaluator is not None:
                                 eval_results = evaluator.eval(sample_fn)
+
                         x_gen = eval_results.pop("x_gen", None)
                         if x_gen is not None and image_dir:
-                            save_scatterplot(
-                                os.path.join(image_dir, f"{e + 1}.jpg"), x_gen, **plot_kwargs)
+                            save_scatterplot(os.path.join(image_dir, f"{e + 1}.jpg"), x_gen, **plot_kwargs, bins=bins, cmap=cmap)
+                        
                         results = dict()
                         results.update(self.current_stats)
                         results.update(eval_results)
                         t.set_postfix(results)
+
             # adjust learning rate every epoch before checkpoint
             self.scheduler.step()
             if not (e + 1) % self.chkpt_intv and chkpt_path:
@@ -109,7 +111,7 @@ class Trainer:
         self.optimizer.load_state_dict(chkpt["optimizer"])
         if self.scheduler is not None:
             self.scheduler.load_state_dict(chkpt["scheduler"])
-        self.start_epoch = chkpt["epoch"]
+        self.start_epoch = 0 #chkpt["epoch"]
 
     def save_checkpoint(self, chkpt_path, **extra_info):
         chkpt = []

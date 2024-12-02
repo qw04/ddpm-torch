@@ -51,8 +51,8 @@ class CIFAR10(tvds.CIFAR10):
     transform = transforms.Compose([
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
-        # transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
+        # transforms.Normalize((0.5, 0.5, 0.5), (0.5, 0.5, 0.5))
+        transforms.Normalize((0.4914, 0.4822, 0.4465), (0.2023, 0.1994, 0.2010))
     ])
     _transform = transforms.PILToTensor()
     train_size = 50000
@@ -259,8 +259,7 @@ def get_dataloader(
         "drop_last": drop_last,
         "num_workers": num_workers
     }
-    dataloader_configs["sampler"] = sampler = DistributedSampler(
-        dataset, shuffle=True, seed=random_seed, drop_last=drop_last) if distributed else None
+    dataloader_configs["sampler"] = sampler = DistributedSampler(dataset, shuffle=True, seed=random_seed, drop_last=drop_last) if distributed else None
     dataloader_configs["shuffle"] = ((sampler is None) if split in {"train", "all"} else False) and not raw
     dataloader = DataLoader(dataset, **dataloader_configs)
     return dataloader, sampler

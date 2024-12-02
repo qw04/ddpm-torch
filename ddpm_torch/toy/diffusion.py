@@ -18,7 +18,7 @@ class GaussianDiffusion(diffusion.GaussianDiffusion):
         out = denoise_fn(x_t, t)
 
         if self.model_var_type == "learned":
-            assert all(out.shape == (B, 2 * D))
+            assert tuple(out.shape) == (B, 2 * D)
             out, model_logvar = out.chunk(2, dim=1)
             model_var = torch.exp(model_logvar)
         elif self.model_var_type in ["fixed-small", "fixed-large"]:

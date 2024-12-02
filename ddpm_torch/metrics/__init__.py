@@ -20,7 +20,7 @@ class Evaluator:
             self,
             dataset,
             diffusion=None,
-            eval_batch_size=256,
+            eval_batch_size=250,
             eval_total_size=50000,
             device=torch.device("cpu")
     ):
@@ -39,7 +39,7 @@ class Evaluator:
         num_batches = math.ceil(self.eval_total_size / self.eval_batch_size)
         with trange(num_batches, desc="Evaluating FID", disable=not is_leader) as t:
             for i in t:
-                if i == len(t) - 1:
+                if i == len(t) - 1 and self.eval_total_size % self.eval_batch_size != 0:
                     batch_size = self.eval_total_size % self.eval_batch_size
                 else:
                     batch_size = self.eval_batch_size
@@ -47,7 +47,7 @@ class Evaluator:
                 if is_leader:
                     self.istats(x.to(self.device))
                     if i == len(t) - 1:
-                        gen_mean, gen_var = self.istats.get_statistics()
+                        gen_mean, gen_var = self.istats.get_statistics() #gen var is full of nans
                         fid = calc_fd(gen_mean, gen_var, self.target_mean, self.target_var)
                         t.set_postfix({"fid": fid})
         return {"fid": fid}

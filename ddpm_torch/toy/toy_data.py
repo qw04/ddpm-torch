@@ -1,10 +1,10 @@
 import math
 import numpy as np
 import torch
-from sklearn.datasets import make_swiss_roll
+from sklearn.datasets import make_swiss_roll, make_moons
 from torch.utils.data import Dataset
 
-__all__ = ["Gaussian8", "Gaussian25", "SwissRoll", "DataStreamer"]
+__all__ = ["Gaussian8", "Gaussian25", "SwissRoll", "Gaussian2", "Gaussian1", "TwoMoons", "DataStreamer"]
 
 
 class ToyDataset(Dataset):
@@ -31,7 +31,47 @@ class ToyDataset(Dataset):
         return self.size
 
     def __getitem__(self, idx):
-        return torch.from_numpy(self.data[idx])
+        return torch.from_numpy(self.data[idx])      
+
+class Gaussian1(ToyDataset):
+    scale = 1
+    mode = [(0, 0)]
+
+    def __init__(self, size, stdev=0.5, random_state=1234, synth = []):
+        if len(synth) == 0:
+            super(Gaussian1, self).__init__(size, stdev, random_state, synth)
+        else:
+            super(Gaussian1, self).__init__(size - len(synth), stdev, random_state, synth)
+
+    def _calc_stdev(self):
+        return self.noise
+
+    def _sample(self):
+        rng = np.random.default_rng(seed=self.random_state)
+        data = self.noise * rng.standard_normal((self.size, 2), dtype=np.float32)
+        return data
+            
+
+class Gaussian2(ToyDataset):
+    scale = 2
+    modes = [(-1, 0), (1, 0)]
+
+    def __init__(self, size, stdev=0.75, random_state=1234, synth=[]):
+        self.modes = self.scale * np.array(self.modes, dtype=np.float32)
+        if len(synth) == 0:
+            super(Gaussian2, self).__init__(size, stdev, random_state, synth)
+        else:
+            super(Gaussian2, self).__init__(size - len(synth), stdev, random_state, synth)
+    
+    def _calc_stdev(self):
+        return math.sqrt(self.noise ** 2 + (self.scale ** 2)) # probably wrong
+
+    def _sample(self):
+        rng = np.random.default_rng(seed=self.random_state)
+        data = self.noise * rng.standard_normal((self.size, 2), dtype=np.float32)
+        data += np.array(self.modes)[np.random.choice(np.arange(2), size=self.size, replace=True)]
+        data /= self.stdev
+        return data
 
 
 class Gaussian8(ToyDataset):
@@ -41,12 +81,12 @@ class Gaussian8(ToyDataset):
         for t in range(8)
     ]  # scale x (8 roots of z^8 = 1)
 
-    def __init__(self, size, stdev=0.02, random_state=1234, synth = []):
+    def __init__(self, size, stdev=0.2, random_state=1234, synth = []):
         self.modes = self.scale * np.array(self.modes, dtype=np.float32)
         if len(synth) == 0:
             super(Gaussian8, self).__init__(size, stdev, random_state, synth)
         else:
-            super(Gaussian8, self).__init__(int(np.ceil((1 - len(synth)/size) * size)), stdev, random_state, synth)
+            super(Gaussian8, self).__init__(size - len(synth), stdev, random_state, synth)
     
     
     def _calc_stdev(self):
@@ -61,14 +101,16 @@ class Gaussian8(ToyDataset):
         data /= self.stdev
         return data
 
-
 class Gaussian25(ToyDataset):
     scale = 2
     modes = [(i, j) for i in range(-2, 3) for j in range(-2, 3)]
 
     def __init__(self, size, stdev=0.05, random_state=1234, synth = []):
         self.modes = self.scale * np.array(self.modes, dtype=np.float32)
-        super(Gaussian25, self).__init__(size, stdev, random_state, synth)
+        if len(synth) == 0:
+            super(Gaussian25, self).__init__(size, stdev, random_state, synth)
+        else:
+            super(Gaussian25, self).__init__(size - len(synth), stdev, random_state, synth)
 
     def _calc_stdev(self):
         # x-y symmetric; around 2.828
@@ -101,7 +143,8 @@ class SwissRoll(ToyDataset):
     """
 
     def __init__(self, size, stdev=0.25, random_state=1234, synth = []):
-        super(SwissRoll, self).__init__(size, stdev, random_state, synth)
+        if len(synth) == 0: super(SwissRoll, self).__init__(size, stdev, random_state, synth)
+        else: super(SwissRoll, self).__init__(size - len(synth), stdev, random_state, synth)
 
     def _calc_stdev(self):
         # calculate the stdev's for the data
@@ -117,17 +160,32 @@ class SwissRoll(ToyDataset):
             random_state=self.random_state)[0][:, [0, 2]].astype(np.float32)
         data /= self.stdev
         return data
+    
+class TwoMoons(ToyDataset):
+    
+    def __init__(self, size, stdev=0.1, random_state=1234, synth = []):
+        if len(synth) == 0: super(TwoMoons, self).__init__(size, stdev, random_state, synth)
+        else: super(TwoMoons, self).__init__(size - len(synth), stdev, random_state, synth)
+    
+    def _calc_stdev(self):
+        return self.noise
+
+    def _sample(self):
+        data = make_moons(n_samples=self.size, noise=self.noise, random_state=self.random_state)[0].astype(np.float32)
+        return data
 
 
 class DataStreamer:
 
-    def __init__(self, dataset: ToyDataset, batch_size: int, num_batches: int, resample: bool = False, synth = []):
-        
+    def __init__(self, dataset: ToyDataset, batch_size: int, num_batches: int, resample: bool = False, synth = [], stdev = -1):
         dataset = self.dataset_map(dataset)
         self.batch_size = batch_size
         self.num_batches = num_batches
         self.resample = resample
-        self.dataset = dataset(batch_size * num_batches, random_state=None, synth = synth)
+        if stdev == -1:
+            self.dataset = dataset(batch_size * num_batches, synth = synth, random_state=None)
+        else:
+            self.dataset = dataset(batch_size * num_batches, stdev = stdev, random_state=None, synth = synth)
 
     def __iter__(self):
         cnt = 0
@@ -150,7 +208,10 @@ class DataStreamer:
         return {
             "gaussian8": Gaussian8,
             "gaussian25": Gaussian25,
-            "swissroll": SwissRoll
+            "swissroll": SwissRoll, 
+            "gaussian2": Gaussian2,
+            "gaussian1": Gaussian1,
+            "twomoons": TwoMoons
         }.get(dataset, None)
 
 
@@ -176,13 +237,18 @@ if __name__ == "__main__":
     DATASET = {
             "gaussian8": Gaussian8,
             "gaussian25": Gaussian25,
-            "swissroll": SwissRoll
+            "swissroll": SwissRoll,
+            "gaussian2": Gaussian2,
+            "gaussian1": Gaussian1,
+            "twomoons": TwoMoons
     }
 
     for name, dataset in DATASET.items():
         data = dataset(size)
         plt.figure(figsize=(6, 6))
         plt.scatter(*np.hsplit(data.data, 2), s=0.5, alpha=0.7)
+        plt.xlim([-2, 2])
+        plt.ylim([-2, 2])
         plt.tight_layout()
         plt.savefig(os.path.join(fig_dir, f"{name}.jpg"))
         dataloader = DataLoader(data)

@@ -1,0 +1,7 @@
+Resume traing : True from ./chkpts/ddpm_0.0_gaussian8.pt
+(30000, 2)
+torch.Size([30000, 2])
+<class 'torch.Tensor'>
+(30000, 2)
+<class 'numpy.ndarray'>
+0

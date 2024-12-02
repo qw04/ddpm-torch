@@ -18,7 +18,7 @@ if __name__ == "__main__":
     parser.add_argument("--root", default="~/datasets", type=str)
     parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="cifar10")
     parser.add_argument("--eval-batch-size", default=512, type=int)
-    parser.add_argument("--eval-total-size", default=50000, type=int)
+    parser.add_argument("--eval-total-size", default=5000, type=int)
     parser.add_argument("--num-workers", default=4, type=int)
     parser.add_argument("--nhood-size", default=3, type=int)
     parser.add_argument("--row-batch-size", default=10000, type=int)
@@ -27,7 +27,7 @@ if __name__ == "__main__":
     parser.add_argument("--precomputed-dir", default="./precomputed", type=str)
     parser.add_argument("--metrics", nargs="+", default=["fid", "pr"], type=str)
     parser.add_argument("--seed", default=1234, type=int)
-    parser.add_argument("--sample-folder", default="", type=str)
+    parser.add_argument("--sample-folder", default="images/train/cifar10", type=str)
     parser.add_argument("--num-gpus", default=1, type=int)
 
     args = parser.parse_args()
