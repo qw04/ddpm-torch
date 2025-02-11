@@ -1,0 +1,26 @@
+  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
+    train()
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 29, in main
+    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 25, in Algorithm
+    synth = learn(synth, l, epochs=50)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 324, in main
+    synth = train(args=args, synth=synth, l=l)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 139, in train
+    trainloader, sampler = get_dataloader(
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/datasets.py", line 255, in get_dataloader
+    if synth is not None: synth_ = synth(batch_size * l)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 247, in sample_fn
+    sample = diffusion.p_sample(denoise_fn=model, shape=shape, device=device, seed = randint(0, 1000))
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/diffusion.py", line 162, in p_sample
+    t = torch.empty((B, ), dtype=torch.int64, device=device)
+TypeError: empty() received an invalid combination of arguments - got (tuple, device=torch.device, dtype=torch.dtype), but expected one of:
+ * (tuple of ints size, *, tuple of names names, torch.memory_format memory_format, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+ * (tuple of ints size, *, torch.memory_format memory_format, Tensor out, torch.dtype dtype, torch.layout layout, torch.device device, bool pin_memory, bool requires_grad)
+

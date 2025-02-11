@@ -1,0 +1,9 @@
+  0%|          | 0/5 [00:00<?, ?it/s]  0%|          | 0/5 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
+    train()
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 31, in main
+    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 27, in Algorithm
+    synth = learn(synth, l, epochs=EPOCHS)
+UnboundLocalError: local variable 'synth' referenced before assignment

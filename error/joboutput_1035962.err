@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 6, in <module>
+    train()
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 31, in main
+    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 22, in Algorithm
+    synth = learn(None, 0, epochs=EPOCHS, chkpt_intv=EPOCHS, chkpt_path=f"chkpts/mnist/mnist_{EPOCHS}.pt")
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 333, in main
+    synth = train(args=args, synth=synth, l=l)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 229, in train
+    logger("Chekpoint loaded sccessfully from ", args.chkpt_path, flush=True)
+TypeError: logger() takes 1 positional argument but 2 were given

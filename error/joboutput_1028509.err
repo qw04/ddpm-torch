@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
+    train()
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 29, in main
+    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 21, in Algorithm
+    synth = learn([], 0, epochs=120)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 318, in main
+    synth = train(args=args, synth=synth, l=l)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 243, in train
+    sample = diffusion.p_sample(denoise_fn=model, shape=shape, device=train_device, seed = randint(0, 1000))
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/utils/_contextlib.py", line 115, in decorate_context
+    return func(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/diffusion.py", line 172, in p_sample
+    x_t = self.p_sample_step(denoise_fn, x_t, t, generator=rng)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/diffusion.py", line 153, in p_sample_step
+    model_mean, _, model_logvar, pred_x_0 = self.p_mean_var(denoise_fn, x_t, t, clip_denoised=clip_denoised, return_pred=True)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/diffusion.py", line 110, in p_mean_var
+    out = denoise_fn(x_t, t)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/models/unet.py", line 216, in forward
+    hs.append(layer(h, t_emb=t_emb))
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/models/unet.py", line 87, in forward
+    x = self.dropout(self.nonlinearity(self.norm2(x)))
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/activation.py", line 396, in forward
+    return F.silu(input, inplace=self.inplace)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/functional.py", line 2102, in silu
+    return torch._C._nn.silu(input)
+torch.cuda.OutOfMemoryError: CUDA out of memory. Tried to allocate 4.88 GiB. GPU 

@@ -195,12 +195,17 @@ class Trainer:
 
         global_steps = 0
         for e in range(self.start_epoch, self.epochs):
+            print("epoch number:", e)
             self.stats.reset()
             self.model.train()
             results = dict()
-            if isinstance(self.sampler, DistributedSampler):
-                self.sampler.set_epoch(e)
-            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs", disable=not self.is_leader) as t:
+            
+            # self.sampler = None if Distributed is False => does nothing
+            if isinstance(self.sampler, DistributedSampler): self.sampler.set_epoch(e)
+
+            print("outside trainloader", flush=True)
+            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs") as t:
+                print("in trainloder", flush=True)
                 for i, x in enumerate(t):
                     if isinstance(x, (list, tuple)):
                         x = x[0]  # unconditional model -> discard labels
@@ -226,6 +231,7 @@ class Trainer:
                 results.update(eval_results)
                 if self.is_leader:
                     self.save_checkpoint(chkpt_path, epoch=e + 1, **results)
+                    print("checkpoint saved to ", chkpt_path)
 
             if self.distributed:
                 dist.barrier()  # synchronize all processes here
@@ -256,7 +262,9 @@ class Trainer:
                 getattr(self, trainee).load_state_dict(chkpt[trainee])
             except AttributeError:
                 continue
+        
         self.start_epoch = chkpt["epoch"]
+        print("starting epoch is", self.start_epoch)
 
     def save_checkpoint(self, chkpt_path, **extra_info):
         chkpt = []
@@ -264,8 +272,8 @@ class Trainer:
             chkpt.append((k, v))
         for k, v in extra_info.items():
             chkpt.append((k, v))
-        if "epoch" in extra_info:
-            chkpt_path = re.sub(r"(_\d+)?\.pt", f"_{extra_info['epoch']}.pt", chkpt_path)
+        # if "epoch" in extra_info:
+            # chkpt_path = re.sub(r"(_\d+)?\.pt", f"_{extra_info['epoch']}.pt", chkpt_path)
         torch.save(dict(chkpt), chkpt_path)
 
     def named_state_dicts(self):

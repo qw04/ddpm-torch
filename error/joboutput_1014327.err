@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 3, in <module>
+    train()
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 301, in main
+    train(args=args)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 26, in train
+    with open(args.config_path, "r") as f:
+FileNotFoundError: [Errno 2] No such file or directory: './configs/mnist.json'

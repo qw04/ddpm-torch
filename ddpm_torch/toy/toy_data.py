@@ -155,6 +155,7 @@ class SwissRoll(ToyDataset):
         return stdev
 
     def _sample(self):
+        if self.size == 0: return np.array([])
         data = make_swiss_roll(
             self.size, noise=self.noise,
             random_state=self.random_state)[0][:, [0, 2]].astype(np.float32)
@@ -171,6 +172,7 @@ class TwoMoons(ToyDataset):
         return self.noise
 
     def _sample(self):
+        if self.size == 0: return np.array([])
         data = make_moons(n_samples=self.size, noise=self.noise, random_state=self.random_state)[0].astype(np.float32)
         return data
 

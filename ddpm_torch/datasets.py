@@ -4,6 +4,8 @@ import os
 import PIL
 import re
 import torch
+import random
+import json
 from collections import namedtuple
 from torch.utils.data import DataLoader, Subset, Sampler
 from torch.utils.data.distributed import DistributedSampler
@@ -37,10 +39,21 @@ class MNIST(tvds.MNIST):
     train_size = 60000
     test_size = 10000
 
+
     def __init__(self, root, split="train", transform=None):
-        super().__init__(root=root, train=split != "test", transform=transform or self._transform, download=False)
+        super().__init__(root=root, train=split != "test", transform=transform or self._transform, download=True)
+        
+        f = open("current_iterated_retraining_config.json", "r")
+        current_iterated_retraining_config = json.load(f)
+        f.close()
+        
+        self.synth = torch.tensor(current_iterated_retraining_config["synth"])
+        self.l = current_iterated_retraining_config["l"]
 
     def __getitem__(self, index):
+        if len(self.synth) > 0:
+            if random.random() < self.l:
+                return self.synth[random.randint(0, len(self.synth) - 1)]
         return super().__getitem__(index)[0]
 
 
@@ -234,15 +247,37 @@ def get_dataloader(
         num_workers=0,
         distributed=False,
         raw=False,
+        synth=None,
+        l=0,
         **kwargs
 ):
+
+    current_iterated_retraining_config = dict()
+    current_iterated_retraining_config["dataset name"] = dataset
+    
+    if synth is not None: synth_ = synth(batch_size * l).tolist()
+    else: synth_ = []
+    
+    print("synth sampled has length", len(synth_))
+    # print("element in synth sampled has length", len(synth_[0]))
+    # print("element in element in synth sampled has length", len(synth_[0][0]))
+    
+    current_iterated_retraining_config["synth"] = synth_
+    current_iterated_retraining_config["l"] = l
+
+    f = open("current_iterated_retraining_config.json", "w")
+    json.dump(current_iterated_retraining_config, f)
+    f.close()
+
     assert isinstance(val_size, float) and 0 <= val_size < 1
 
     dataset_name, dataset_cls = dataset, DATASET_DICT[dataset]
     dataset_info = DATASET_INFO[dataset_name]
     transform = dataset_cls.transform if not raw else None
-    if distributed:
-        batch_size = batch_size // int(os.environ.get("WORLD_SIZE", "1"))
+    
+    # False
+    if distributed: batch_size = batch_size // int(os.environ.get("WORLD_SIZE", "1"))
+    
     dataset_kwargs = {"root": root, "split": split, "transform": transform}
     dataset_kwargs.update({k: v for k, v in kwargs.items() if k in dataset_kwargs})
     dataset = dataset_cls(**dataset_kwargs)
@@ -259,6 +294,7 @@ def get_dataloader(
         "drop_last": drop_last,
         "num_workers": num_workers
     }
+
     dataloader_configs["sampler"] = sampler = DistributedSampler(dataset, shuffle=True, seed=random_seed, drop_last=drop_last) if distributed else None
     dataloader_configs["shuffle"] = ((sampler is None) if split in {"train", "all"} else False) and not raw
     dataloader = DataLoader(dataset, **dataloader_configs)

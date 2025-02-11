@@ -1,0 +1,58 @@
+  0%|          | 0/5 [00:00<?, ?it/s]
+121/170 epochs:   0%|          | 0/468 [00:00<?, ?it/s][ATraceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 569, in reduce_storage
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 198, in DupFd
+  File "/usr/lib64/python3.9/multiprocessing/resource_sharer.py", line 48, in __init__
+Traceback (most recent call last):
+OSError: [Errno 24] Too many open files
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 569, in reduce_storage
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 198, in DupFd
+  File "/usr/lib64/python3.9/multiprocessing/resource_sharer.py", line 48, in __init__
+OSError: [Errno 24] Too many open files
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 568, in reduce_storage
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 304, in wrapper
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 374, in _share_fd_cpu_
+RuntimeError: unable to open shared memory object </torch_376119_2205696167_732> in read-write mode: Too many open files (24)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 568, in reduce_storage
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 304, in wrapper
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 374, in _share_fd_cpu_
+RuntimeError: unable to open shared memory object </torch_376245_473678477_726> in read-write mode: Too many open files (24)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 569, in reduce_storage
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 198, in DupFd
+  File "/usr/lib64/python3.9/multiprocessing/resource_sharer.py", line 48, in __init__
+OSError: [Errno 24] Too many open files
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 569, in reduce_storage
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 198, in DupFd
+  File "/usr/lib64/python3.9/multiprocessing/resource_sharer.py", line 48, in __init__
+OSError: [Errno 24] Too many open files
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 568, in reduce_storage
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 304, in wrapper
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 374, in _share_fd_cpu_
+RuntimeError: unable to open shared memory object </torch_376308_92481093_723> in read-write mode: Too many open files (24)
+Traceback (most recent call last):
+  File "/usr/lib64/python3.9/multiprocessing/queues.py", line 244, in _feed
+  File "/usr/lib64/python3.9/multiprocessing/reduction.py", line 51, in dumps
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/multiprocessing/reductions.py", line 568, in reduce_storage
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 304, in wrapper
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/storage.py", line 374, in _share_fd_cpu_
+RuntimeError: unable to open shared memory object </torch_376182_1108597048_729> in read-write mode: Too many open files (24)
+slurmstepd: error: *** JOB 1028746 ON gecko-01 CANCELLED AT 2025-01-27T06:17:33 ***

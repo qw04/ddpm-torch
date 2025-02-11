@@ -1,0 +1,30 @@
+  0%|          | 0/30 [00:00<?, ?it/s]
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:08<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 37, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 77, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 139, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 215, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 221, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, 1)
+NameError: name 'torch' is not defined
+  3%|▎         | 1/30 [02:08<1:02:16, 128.85s/it]
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:06<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 37, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 77, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 139, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 215, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 221, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, 1)
+NameError: name 'torch' is not defined
+  7%|▋         | 2/30 [04:15<59:26, 127.39s/it]  
+  0%|          | 0/11 [00:00<?, ?it/s][Aslurmstepd: error: *** JOB 1027947 ON gecko-02 CANCELLED AT 2025-01-26T01:52:00 ***

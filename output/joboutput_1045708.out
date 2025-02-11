@@ -1,0 +1,794 @@
+True
+Training on Real Data
+epochs: 200
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+synth sampled has length 0
+Checkpoint will be saved to /dcs/22/u2211900/ddpm-torch/chkpts/mnist/mnist_200_1.0.pt every 200 epoch(s)
+Generated images (x64) will be saved to /dcs/22/u2211900/ddpm-torch/images/train/mnist every 10 epoch(s)
+cuDNN benchmark: ON
+Training starts...
+epoch number: 0
+outside trainloader
+in trainloder
+epoch number: 1
+outside trainloader
+in trainloder
+epoch number: 2
+outside trainloader
+in trainloder
+epoch number: 3
+outside trainloader
+in trainloder
+epoch number: 4
+outside trainloader
+in trainloder
+epoch number: 5
+outside trainloader
+in trainloder
+epoch number: 6
+outside trainloader
+in trainloder
+epoch number: 7
+outside trainloader
+in trainloder
+epoch number: 8
+outside trainloader
+in trainloder
+epoch number: 9
+outside trainloader
+in trainloder
+epoch number: 10
+outside trainloader
+in trainloder
+epoch number: 11
+outside trainloader
+in trainloder
+epoch number: 12
+outside trainloader
+in trainloder
+epoch number: 13
+outside trainloader
+in trainloder
+epoch number: 14
+outside trainloader
+in trainloder
+epoch number: 15
+outside trainloader
+in trainloder
+epoch number: 16
+outside trainloader
+in trainloder
+epoch number: 17
+outside trainloader
+in trainloder
+epoch number: 18
+outside trainloader
+in trainloder
+epoch number: 19
+outside trainloader
+in trainloder
+epoch number: 20
+outside trainloader
+in trainloder
+epoch number: 21
+outside trainloader
+in trainloder
+epoch number: 22
+outside trainloader
+in trainloder
+epoch number: 23
+outside trainloader
+in trainloder
+epoch number: 24
+outside trainloader
+in trainloder
+epoch number: 25
+outside trainloader
+in trainloder
+epoch number: 26
+outside trainloader
+in trainloder
+epoch number: 27
+outside trainloader
+in trainloder
+epoch number: 28
+outside trainloader
+in trainloder
+epoch number: 29
+outside trainloader
+in trainloder
+epoch number: 30
+outside trainloader
+in trainloder
+epoch number: 31
+outside trainloader
+in trainloder
+epoch number: 32
+outside trainloader
+in trainloder
+epoch number: 33
+outside trainloader
+in trainloder
+epoch number: 34
+outside trainloader
+in trainloder
+epoch number: 35
+outside trainloader
+in trainloder
+epoch number: 36
+outside trainloader
+in trainloder
+epoch number: 37
+outside trainloader
+in trainloder
+epoch number: 38
+outside trainloader
+in trainloder
+epoch number: 39
+outside trainloader
+in trainloder
+epoch number: 40
+outside trainloader
+in trainloder
+epoch number: 41
+outside trainloader
+in trainloder
+epoch number: 42
+outside trainloader
+in trainloder
+epoch number: 43
+outside trainloader
+in trainloder
+epoch number: 44
+outside trainloader
+in trainloder
+epoch number: 45
+outside trainloader
+in trainloder
+epoch number: 46
+outside trainloader
+in trainloder
+epoch number: 47
+outside trainloader
+in trainloder
+epoch number: 48
+outside trainloader
+in trainloder
+epoch number: 49
+outside trainloader
+in trainloder
+epoch number: 50
+outside trainloader
+in trainloder
+epoch number: 51
+outside trainloader
+in trainloder
+epoch number: 52
+outside trainloader
+in trainloder
+epoch number: 53
+outside trainloader
+in trainloder
+epoch number: 54
+outside trainloader
+in trainloder
+epoch number: 55
+outside trainloader
+in trainloder
+epoch number: 56
+outside trainloader
+in trainloder
+epoch number: 57
+outside trainloader
+in trainloder
+epoch number: 58
+outside trainloader
+in trainloder
+epoch number: 59
+outside trainloader
+in trainloder
+epoch number: 60
+outside trainloader
+in trainloder
+epoch number: 61
+outside trainloader
+in trainloder
+epoch number: 62
+outside trainloader
+in trainloder
+epoch number: 63
+outside trainloader
+in trainloder
+epoch number: 64
+outside trainloader
+in trainloder
+epoch number: 65
+outside trainloader
+in trainloder
+epoch number: 66
+outside trainloader
+in trainloder
+epoch number: 67
+outside trainloader
+in trainloder
+epoch number: 68
+outside trainloader
+in trainloder
+epoch number: 69
+outside trainloader
+in trainloder
+epoch number: 70
+outside trainloader
+in trainloder
+epoch number: 71
+outside trainloader
+in trainloder
+epoch number: 72
+outside trainloader
+in trainloder
+epoch number: 73
+outside trainloader
+in trainloder
+epoch number: 74
+outside trainloader
+in trainloder
+epoch number: 75
+outside trainloader
+in trainloder
+epoch number: 76
+outside trainloader
+in trainloder
+epoch number: 77
+outside trainloader
+in trainloder
+epoch number: 78
+outside trainloader
+in trainloder
+epoch number: 79
+outside trainloader
+in trainloder
+epoch number: 80
+outside trainloader
+in trainloder
+epoch number: 81
+outside trainloader
+in trainloder
+epoch number: 82
+outside trainloader
+in trainloder
+epoch number: 83
+outside trainloader
+in trainloder
+epoch number: 84
+outside trainloader
+in trainloder
+epoch number: 85
+outside trainloader
+in trainloder
+epoch number: 86
+outside trainloader
+in trainloder
+epoch number: 87
+outside trainloader
+in trainloder
+epoch number: 88
+outside trainloader
+in trainloder
+epoch number: 89
+outside trainloader
+in trainloder
+epoch number: 90
+outside trainloader
+in trainloder
+epoch number: 91
+outside trainloader
+in trainloder
+epoch number: 92
+outside trainloader
+in trainloder
+epoch number: 93
+outside trainloader
+in trainloder
+epoch number: 94
+outside trainloader
+in trainloder
+epoch number: 95
+outside trainloader
+in trainloder
+epoch number: 96
+outside trainloader
+in trainloder
+epoch number: 97
+outside trainloader
+in trainloder
+epoch number: 98
+outside trainloader
+in trainloder
+epoch number: 99
+outside trainloader
+in trainloder
+epoch number: 100
+outside trainloader
+in trainloder
+epoch number: 101
+outside trainloader
+in trainloder
+epoch number: 102
+outside trainloader
+in trainloder
+epoch number: 103
+outside trainloader
+in trainloder
+epoch number: 104
+outside trainloader
+in trainloder
+epoch number: 105
+outside trainloader
+in trainloder
+epoch number: 106
+outside trainloader
+in trainloder
+epoch number: 107
+outside trainloader
+in trainloder
+epoch number: 108
+outside trainloader
+in trainloder
+epoch number: 109
+outside trainloader
+in trainloder
+epoch number: 110
+outside trainloader
+in trainloder
+epoch number: 111
+outside trainloader
+in trainloder
+epoch number: 112
+outside trainloader
+in trainloder
+epoch number: 113
+outside trainloader
+in trainloder
+epoch number: 114
+outside trainloader
+in trainloder
+epoch number: 115
+outside trainloader
+in trainloder
+epoch number: 116
+outside trainloader
+in trainloder
+epoch number: 117
+outside trainloader
+in trainloder
+epoch number: 118
+outside trainloader
+in trainloder
+epoch number: 119
+outside trainloader
+in trainloder
+epoch number: 120
+outside trainloader
+in trainloder
+epoch number: 121
+outside trainloader
+in trainloder
+epoch number: 122
+outside trainloader
+in trainloder
+epoch number: 123
+outside trainloader
+in trainloder
+epoch number: 124
+outside trainloader
+in trainloder
+epoch number: 125
+outside trainloader
+in trainloder
+epoch number: 126
+outside trainloader
+in trainloder
+epoch number: 127
+outside trainloader
+in trainloder
+epoch number: 128
+outside trainloader
+in trainloder
+epoch number: 129
+outside trainloader
+in trainloder
+epoch number: 130
+outside trainloader
+in trainloder
+epoch number: 131
+outside trainloader
+in trainloder
+epoch number: 132
+outside trainloader
+in trainloder
+epoch number: 133
+outside trainloader
+in trainloder
+epoch number: 134
+outside trainloader
+in trainloder
+epoch number: 135
+outside trainloader
+in trainloder
+epoch number: 136
+outside trainloader
+in trainloder
+epoch number: 137
+outside trainloader
+in trainloder
+epoch number: 138
+outside trainloader
+in trainloder
+epoch number: 139
+outside trainloader
+in trainloder
+epoch number: 140
+outside trainloader
+in trainloder
+epoch number: 141
+outside trainloader
+in trainloder
+epoch number: 142
+outside trainloader
+in trainloder
+epoch number: 143
+outside trainloader
+in trainloder
+epoch number: 144
+outside trainloader
+in trainloder
+epoch number: 145
+outside trainloader
+in trainloder
+epoch number: 146
+outside trainloader
+in trainloder
+epoch number: 147
+outside trainloader
+in trainloder
+epoch number: 148
+outside trainloader
+in trainloder
+epoch number: 149
+outside trainloader
+in trainloder
+epoch number: 150
+outside trainloader
+in trainloder
+epoch number: 151
+outside trainloader
+in trainloder
+epoch number: 152
+outside trainloader
+in trainloder
+epoch number: 153
+outside trainloader
+in trainloder
+epoch number: 154
+outside trainloader
+in trainloder
+epoch number: 155
+outside trainloader
+in trainloder
+epoch number: 156
+outside trainloader
+in trainloder
+epoch number: 157
+outside trainloader
+in trainloder
+epoch number: 158
+outside trainloader
+in trainloder
+epoch number: 159
+outside trainloader
+in trainloder
+epoch number: 160
+outside trainloader
+in trainloder
+epoch number: 161
+outside trainloader
+in trainloder
+epoch number: 162
+outside trainloader
+in trainloder
+epoch number: 163
+outside trainloader
+in trainloder
+epoch number: 164
+outside trainloader
+in trainloder
+epoch number: 165
+outside trainloader
+in trainloder
+epoch number: 166
+outside trainloader
+in trainloder
+epoch number: 167
+outside trainloader
+in trainloder
+epoch number: 168
+outside trainloader
+in trainloder
+epoch number: 169
+outside trainloader
+in trainloder
+epoch number: 170
+outside trainloader
+in trainloder
+epoch number: 171
+outside trainloader
+in trainloder
+epoch number: 172
+outside trainloader
+in trainloder
+epoch number: 173
+outside trainloader
+in trainloder
+epoch number: 174
+outside trainloader
+in trainloder
+epoch number: 175
+outside trainloader
+in trainloder
+epoch number: 176
+outside trainloader
+in trainloder
+epoch number: 177
+outside trainloader
+in trainloder
+epoch number: 178
+outside trainloader
+in trainloder
+epoch number: 179
+outside trainloader
+in trainloder
+epoch number: 180
+outside trainloader
+in trainloder
+epoch number: 181
+outside trainloader
+in trainloder
+epoch number: 182
+outside trainloader
+in trainloder
+epoch number: 183
+outside trainloader
+in trainloder
+epoch number: 184
+outside trainloader
+in trainloder
+epoch number: 185
+outside trainloader
+in trainloder
+epoch number: 186
+outside trainloader
+in trainloder
+epoch number: 187
+outside trainloader
+in trainloder
+epoch number: 188
+outside trainloader
+in trainloder
+epoch number: 189
+outside trainloader
+in trainloder
+epoch number: 190
+outside trainloader
+in trainloder
+epoch number: 191
+outside trainloader
+in trainloder
+epoch number: 192
+outside trainloader
+in trainloder
+epoch number: 193
+outside trainloader
+in trainloder
+epoch number: 194
+outside trainloader
+in trainloder
+epoch number: 195
+outside trainloader
+in trainloder
+epoch number: 196
+outside trainloader
+in trainloder
+epoch number: 197
+outside trainloader
+in trainloder
+epoch number: 198
+outside trainloader
+in trainloder
+epoch number: 199
+outside trainloader
+in trainloder
+checkpoint saved to  ./chkpts/mnist/mnist_200_1.0.pt
+Training completed!
+epochs: 250
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+shape of samples is (128, 1, 32, 32)
+synth sampled has length 128
+Checkpoint will be saved to /dcs/22/u2211900/ddpm-torch/chkpts/mnist/mnist_250_1.0.pt every 250 epoch(s)
+Generated images (x64) will be saved to /dcs/22/u2211900/ddpm-torch/images/train/mnist every 10 epoch(s)
+Checkpoint file does not exist!
+Starting from scratch...
+cuDNN benchmark: ON
+Training starts...
+epoch number: 0
+outside trainloader
+in trainloder
+epoch number: 1
+outside trainloader
+in trainloder
+epoch number: 2
+outside trainloader
+in trainloder
+epoch number: 3
+outside trainloader
+in trainloder
+epoch number: 4
+outside trainloader
+in trainloder
+epoch number: 5
+outside trainloader
+in trainloder
+epoch number: 6
+outside trainloader
+in trainloder
+epoch number: 7
+outside trainloader
+in trainloder
+epoch number: 8
+outside trainloader
+in trainloder
+epoch number: 9
+outside trainloader
+in trainloder
+epoch number: 10
+outside trainloader
+in trainloder
+epoch number: 11
+outside trainloader
+in trainloder
+epoch number: 12
+outside trainloader
+in trainloder
+epoch number: 13
+outside trainloader
+in trainloder
+epoch number: 14
+outside trainloader
+in trainloder
+epoch number: 15
+outside trainloader
+in trainloder
+epoch number: 16
+outside trainloader
+in trainloder
+epoch number: 17
+outside trainloader
+in trainloder
+epoch number: 18
+outside trainloader
+in trainloder
+epoch number: 19
+outside trainloader
+in trainloder
+epoch number: 20
+outside trainloader
+in trainloder
+epoch number: 21
+outside trainloader
+in trainloder
+epoch number: 22
+outside trainloader
+in trainloder
+epoch number: 23
+outside trainloader
+in trainloder
+epoch number: 24
+outside trainloader
+in trainloder
+epoch number: 25
+outside trainloader
+in trainloder
+epoch number: 26
+outside trainloader
+in trainloder
+epoch number: 27
+outside trainloader
+in trainloder
+epoch number: 28
+outside trainloader
+in trainloder
+epoch number: 29
+outside trainloader
+in trainloder
+epoch number: 30
+outside trainloader
+in trainloder
+epoch number: 31
+outside trainloader
+in trainloder
+epoch number: 32
+outside trainloader
+in trainloder
+epoch number: 33
+outside trainloader
+in trainloder
+epoch number: 34
+outside trainloader
+in trainloder
+epoch number: 35
+outside trainloader
+in trainloder
+epoch number: 36
+outside trainloader
+in trainloder
+epoch number: 37
+outside trainloader
+in trainloder
+epoch number: 38
+outside trainloader
+in trainloder
+epoch number: 39
+outside trainloader
+in trainloder
+epoch number: 40
+outside trainloader
+in trainloder
+epoch number: 41
+outside trainloader
+in trainloder
+epoch number: 42
+outside trainloader
+in trainloder
+epoch number: 43
+outside trainloader
+in trainloder
+epoch number: 44
+outside trainloader
+in trainloder
+epoch number: 45
+outside trainloader
+in trainloder
+epoch number: 46
+outside trainloader
+in trainloder
+epoch number: 47
+outside trainloader
+in trainloder
+epoch number: 48
+outside trainloader
+in trainloder
+epoch number: 49
+outside trainloader
+in trainloder
+epoch number: 50
+outside trainloader
+in trainloder
+epoch number: 51
+outside trainloader
+in trainloder
+epoch number: 52
+outside trainloader
+in trainloder
+epoch number: 53
+outside trainloader
+in trainloder
+epoch number: 54
+outside trainloader
+in trainloder
+epoch number: 55
+outside trainloader
+in trainloder
+epoch number: 56
+outside trainloader
+in trainloder

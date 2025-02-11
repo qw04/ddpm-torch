@@ -1,0 +1,38 @@
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+Downloading http://yann.lecun.com/exdb/mnist/train-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-images-idx3-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw/train-images-idx3-ubyte.gz
+Extracting /dcs/22/u2211900/datasets/MNIST/raw/train-images-idx3-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/train-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/train-labels-idx1-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw/train-labels-idx1-ubyte.gz
+Extracting /dcs/22/u2211900/datasets/MNIST/raw/train-labels-idx1-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-images-idx3-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-images-idx3-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw/t10k-images-idx3-ubyte.gz
+Extracting /dcs/22/u2211900/datasets/MNIST/raw/t10k-images-idx3-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw
+
+Downloading http://yann.lecun.com/exdb/mnist/t10k-labels-idx1-ubyte.gz
+Failed to download (trying next):
+HTTP Error 404: Not Found
+
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz
+Downloading https://ossci-datasets.s3.amazonaws.com/mnist/t10k-labels-idx1-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw/t10k-labels-idx1-ubyte.gz
+Extracting /dcs/22/u2211900/datasets/MNIST/raw/t10k-labels-idx1-ubyte.gz to /dcs/22/u2211900/datasets/MNIST/raw
+
+Checkpoint will be saved to /dcs/22/u2211900/ddpm-torch/chkpts/mnist/mnist.pt every 120 epoch(s)
+Generated images (x64) will be saved to /dcs/22/u2211900/ddpm-torch/images/train/mnist every 10 epoch(s)
+cuDNN benchmark: ON
+Training starts...

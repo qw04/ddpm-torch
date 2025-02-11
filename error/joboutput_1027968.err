@@ -1,0 +1,74 @@
+  0%|          | 0/30 [00:00<?, ?it/s]
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:11<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 38, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 78, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 140, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 216, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 222, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, dim=(1,))
+TypeError: sum() received an invalid combination of arguments - got (numpy.ndarray, dim=tuple), but expected one of:
+ * (Tensor input, *, torch.dtype dtype)
+ * (Tensor input, tuple of ints dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+ * (Tensor input, tuple of names dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+
+  3%|▎         | 1/30 [02:11<1:03:25, 131.22s/it]
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:06<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 38, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 78, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 140, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 216, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 222, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, dim=(1,))
+TypeError: sum() received an invalid combination of arguments - got (numpy.ndarray, dim=tuple), but expected one of:
+ * (Tensor input, *, torch.dtype dtype)
+ * (Tensor input, tuple of ints dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+ * (Tensor input, tuple of names dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+
+  7%|▋         | 2/30 [04:17<59:59, 128.54s/it]  
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:13<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 38, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 78, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 140, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 216, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 222, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, dim=(1,))
+TypeError: sum() received an invalid combination of arguments - got (numpy.ndarray, dim=tuple), but expected one of:
+ * (Tensor input, *, torch.dtype dtype)
+ * (Tensor input, tuple of ints dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+ * (Tensor input, tuple of names dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+
+ 10%|█         | 3/30 [06:31<58:55, 130.96s/it]
+  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:07<?, ?it/s]
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 38, in main
+    state = knn_precision_recall_features(data.data, synth)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 78, in knn_precision_recall_features
+    ref_manifold = ManifoldEstimator(distance_block, ref_features, row_batch_size, col_batch_size, nhood_sizes)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 140, in __init__
+    distance_batch[0:end1-begin1, begin2:end2] = self._distance_block.pairwise_distances(row_batch, col_batch)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 216, in pairwise_distances
+    return batch_pairwise_distances(U, V)
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 222, in batch_pairwise_distances
+    norm_u = torch.sum(U**2, dim=(1,))
+TypeError: sum() received an invalid combination of arguments - got (numpy.ndarray, dim=tuple), but expected one of:
+ * (Tensor input, *, torch.dtype dtype)
+ * (Tensor input, tuple of ints dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+ * (Tensor input, tuple of names dim, bool keepdim, *, torch.dtype dtype, Tensor out)
+
+ 13%|█▎        | 4/30 [08:39<56:12, 129.73s/it]
+  0%|          | 0/11 [00:00<?, ?it/s][Aslurmstepd: error: *** JOB 1027968 ON gecko-02 CANCELLED AT 2025-01-26T02:15:45 ***

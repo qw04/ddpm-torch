@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
+    train()
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 29, in main
+    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
+  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 21, in Algorithm
+    synth = learn([], 0, epochs=120)
+  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
+    return f(*args, **kwargs)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 317, in main
+    synth = train(args=args, synth=synth, l=l)
+  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 242, in train
+    sample = diffusion.p_sample(denoise_fn=model, shape=shape, device=train_device, seed = randint(0, 1000))
+NameError: name 'randint' is not defined

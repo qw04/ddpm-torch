@@ -1,0 +1,17 @@
+True
+Training on Real Data
+epochs: 120
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+synth sampled has length 0
+Checkpoint will be saved to /dcs/22/u2211900/ddpm-torch/chkpts/mnist/mnist.pt every 120 epoch(s)
+Generated images (x64) will be saved to /dcs/22/u2211900/ddpm-torch/images/train/mnist every 10 epoch(s)
+starting epoch is 120
+Chekpoint loaded sccessfully from chkpts/mnist/mnist_120.pt
+cuDNN benchmark: ON
+Training starts...
+Training completed!
+epochs: 170
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+shape of samples is (128, 1, 32, 32)

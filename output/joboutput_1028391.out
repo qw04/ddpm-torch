@@ -1,0 +1,6 @@
+True
+Training on Real Data
+Dataset: mnist
+Effective batch-size is 128 * 1 = 128.
+Checkpoint will be saved to /dcs/22/u2211900/ddpm-torch/chkpts/mnist/mnist.pt every 120 epoch(s)
+Generated images (x64) will be saved to /dcs/22/u2211900/ddpm-torch/images/train/mnist every 10 epoch(s)
