@@ -5,8 +5,11 @@ __pycache__
 *.ipynb
 .ipynb_checkpoints
 
+
 test
 precomputed
 figs
 images
 chkpts
+output
+error
