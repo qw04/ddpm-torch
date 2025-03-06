@@ -8,6 +8,33 @@ import math
 from scipy.stats import wasserstein_distance_nd
 import traceback
 from old_scripts.train import main as learn
+import random
+
+
+class SyntheticDataLoader:
+
+    def __init__(self, chkpt_paths):
+        self.chkpt_paths = chkpt_paths
+        self.synthetic_samplers = [self.load_new_checkpoint(path) for path in chkpt_paths]
+    
+    def load_new_checkpoint(self, path):
+        synth = learn(synth=None, l=0, epochs=0, resume=True, chkpt_path=path)  
+        return synth
+
+    def sample(self, n): # n <= batch_size 
+        final_samples = []
+        num_sampler_per_sampler = int(math.ceil(n/len(self.synthetic_samplers)))
+        for sampler in self.synthetic_samplers:
+            final_samples += sampler(num_sampler_per_sampler)
+            
+        return np.shuffle([sampler(n) for sampler in self.synthetic_samplers])
+        
+            
+        
+
+
+
+
 
 
 def Algorithm(training_iterations, l, path):

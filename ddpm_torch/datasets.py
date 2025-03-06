@@ -15,6 +15,15 @@ CSV = namedtuple("CSV", ["header", "index", "data"])
 DATASET_DICT = dict()
 DATASET_INFO = dict()
 
+# class Synth:
+
+#     def __init__(self, chkpt_paths, **kwargs):
+#         self.chkpt_paths = chkpt_paths
+#         self.kwargs = kwargs
+
+#     def 
+
+    
 
 def register_dataset(cls):
     name = cls.__name__.lower()

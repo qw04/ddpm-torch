@@ -6,31 +6,34 @@ from tqdm import tqdm
 from PIL import Image
 import math
 from scipy.stats import wasserstein_distance_nd
+from synthetic import SyntheticDataSampler
 
-def learn(l, synth, stdev, batch_size=100, timesteps=100, model_var_type="fixed-small"):
-    BINS = 250
-    CMAP = "magma"
-    train_toy = TrainToy(batch_size=batch_size, timesteps=timesteps, model_var_type=model_var_type)
-    train_toy.set_data(l, synth, stdev)
+
+def learn(l, synth, chkpt_path_load, **kwargs):
+    train_toy = TrainToy(**kwargs)
+    train_toy.set_data(synth, l)
     train_toy.set_parameters()
-    train_toy.set_checkpoint_path(l, stdev, model_var_type)
+    train_toy.set_checkpoint_path(synthetic_ratio = l)
     train_toy.set_image_directory()
     train_toy.set_scheduler()
-    synth = train_toy.train(l, BINS, CMAP)
-    
+    synth = train_toy.train(l, checkpoint_path_load=chkpt_path_load, bins=250, cmap="magma")
     return synth
+
 
 def Algorithm(training_iterations, l, stdev, path, batch_size=100, timesteps=100, model_var_type="fixed-small"):
     
     path_to_image = r"/dcs/22/u2211900/ddpm-torch/images/train/gaussian2/200.jpg"
-    
-    if not os.path.exists(path): 
-        os.makedirs(path)
-    
+    synth_paths = [f"synth/{l}/{i}.txt" for i in range(training_iterations+1)]
+
+
+    if not os.path.exists(path):  os.makedirs(path)
     print(os.path.exists(path))
 
     print("Training on Real Data")
-    synth = learn(l, [], stdev, batch_size, timesteps, model_var_type)
+    synthetic_data_sampler = SyntheticDataSampler(dataset_name, [], [i*[1] for i in range(training_iterations+1)], training_iterations)
+    
+    synth = learn(l, )
+    
     Image.open(path_to_image).save(rf"{path}/0.jpg")    
     
     for t in tqdm(range(training_iterations)):

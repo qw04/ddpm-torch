@@ -111,7 +111,7 @@ class Trainer:
         self.optimizer.load_state_dict(chkpt["optimizer"])
         if self.scheduler is not None:
             self.scheduler.load_state_dict(chkpt["scheduler"])
-        self.start_epoch = 0 #chkpt["epoch"]
+        self.start_epoch = chkpt["epoch"]
 
     def save_checkpoint(self, chkpt_path, **extra_info):
         chkpt = []

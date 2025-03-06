@@ -20,7 +20,7 @@ def print_centre_counts(synth):
         print(i, j)
 
 class TrainToy:
-    def __init__(self, batch_size=200, timesteps=100, model_var_type="learned", dataset="gaussian2"):
+    def __init__(self, **kwargs):
         parser = ArgumentParser()
         
         # neural network parameters
@@ -55,39 +55,43 @@ class TrainToy:
         parser.add_argument("--num-temporal-layers", default=3, type=int)
 
         self.args = parser.parse_args()
-        self.args.dataset = dataset
-        self.args.batch_size = batch_size
-        self.args.timesteps = timesteps
-        self.args.model_var_type = model_var_type
-        if self.args.model_var_type == "learned": self.args.loss_type = "kl"
+        for key, value in kwargs.items():
+            setattr(self.args, key, value)
+
+        if self.args.model_var_type == "learned": self.args.loss_type = "kl"    
     
-    def set_data(self, l=0, synth = [], stdev=-1):
+    def set_data(self, synthetic_data_sampler, synthetic_ratio):
         seed_all(self.args.seed)
         self.in_features = 2
         self.root = os.path.expanduser(self.args.root)
         self.num_batches = self.args.size // self.args.batch_size
-        self.trainloader = DataStreamer(self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches, synth = synth, stdev=stdev)
+        
+        self.trainloader = DataStreamer(
+            dataset=self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches, 
+            synthetic_data_sampler=synthetic_data_sampler, synthetic_ratio=synthetic_ratio
+            )
             
     def set_parameters(self, model = None):
-        # training parameters
         self.device = torch.device(self.args.device)
+        
+        # Gaussian Diffusion Parameters
         self.betas = get_beta_schedule(self.args.beta_schedule, beta_start=self.args.beta_start, beta_end=self.args.beta_end, timesteps=self.args.timesteps)
         self.diffusion = GaussianDiffusion(betas=self.betas, model_mean_type=self.args.model_mean_type, model_var_type=self.args.model_var_type, loss_type=self.args.loss_type)
 
-        # model parameters
+        # neural network parameters
         self.out_features = 2 * self.in_features if self.args.model_var_type == "learned" else self.in_features
         if model is None: self.model = Decoder(self.in_features, self.args.mid_features, self.out_features, self.args.num_temporal_layers)
         else: self.model = model
         self.model.to(self.device)
 
-        # training parameters
+        # optimizer
         self.optimizer = Adam(self.model.parameters(), lr=self.args.lr, betas=(self.args.beta1, self.args.beta2))
 
-    def set_checkpoint_path(self, *args):
+    def set_checkpoint_path(self, **kwargs):
         # checkpoint path
         if not os.path.exists(self.args.chkpt_dir):
             os.makedirs(self.args.chkpt_dir)
-        self.chkpt_path = os.path.join(self.args.chkpt_dir, "ddpm_" + "_".join([str(arg) for arg in args]) + ".pt")
+        self.chkpt_path = os.path.join(self.args.chkpt_dir, "ddpm__" + "__".join([f"{key}_{kwards[key]}" for value in kwargs.keys()]) + ".pt")
 
     def set_image_directory(self):
         # set up image directory
@@ -98,7 +102,7 @@ class TrainToy:
     def set_scheduler(self): # scheduler
         self.scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda t: min((t + 1) /self.args.lr_warmup, 1.0)) if self.args.lr_warmup > 0 else None
 
-    def train(self, l, bins=100, cmap="Blues"):
+    def train(self, synthetic_ratio, checkpoint_path_load, bins=100, cmap="Blues"):
         # load trainer
         grad_norm = 0  # gradient global clipping is disabled
         eval_intv = self.args.eval_intv
@@ -132,8 +136,8 @@ class TrainToy:
 
         if self.args.resume:
             try:
-                trainer.load_checkpoint(self.chkpt_path)
-                print(f"Resume traing : {self.args.resume} from {self.chkpt_path}")
+                trainer.load_checkpoint(checkpoint_path_load)
+                print(f"Resume traing : {self.args.resume} from {checkpoint_path_load}")
             except FileNotFoundError:
                 print("Checkpoint file does not exist!")
                 print("Starting from scratch...")
@@ -141,12 +145,14 @@ class TrainToy:
         trainer.train(evaluator, chkpt_path=self.chkpt_path, image_dir=self.image_dir, bins=bins, cmap=cmap)
         
         
-        shape = (self.args.size,) + trainer.shape
-        print(shape)
-        sample = self.diffusion.p_sample(denoise_fn=self.model, shape=shape, device=self.device, seed = randint(0, 1000))
-        synth = sample.cpu().numpy()
-        # print_centre_counts(synth) # assumes 8-Gaussian is the dataset
-        return synth
+        def sample_fn(n, diffusion, model, shape_, device):
+            if isinstance(n, float): n = int(n// 1) 
+            shape = (n, ) + shape_
+            sample = diffusion.p_sample(denoise_fn=model, shape=shape, device=device, seed = randint(0, 1000))
+            synth = sample.cpu().numpy()
+            return synth
+
+        return partial(sample_fn, diffusion=self.diffusion, model=self.model, shape_ = trainer.shape, device=self.device)
 
 
 if __name__ == "__main__":
