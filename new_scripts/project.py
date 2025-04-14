@@ -22,7 +22,7 @@ def one_iteration(l, synth, model_var_type, dataset, batch_size = 100, timesteps
     synth = train_toy.train(l, BINS, CMAP)
     return synth
 
-def many_iterations(training_iterations, l, path_to_save, path_to_image, model_var_type, dataset, batch_size=200, timesteps=200):
+def many_iterations(training_iterations, l, path_to_save, path_to_image, dataset, batch_size=200, timesteps=200):
     if not os.path.exists(path_to_save): 
         os.makedirs(path_to_save)
     synth_path = os.path.join("synth/", path_to_save)
@@ -42,19 +42,22 @@ def many_iterations(training_iterations, l, path_to_save, path_to_image, model_v
         Image.open(path_to_image).save(rf"{path_to_save}/{str(t+1)}.jpg")
 
 def main():
-    datasets = ["gaussian8", "gaussian25", "swissroll", "gaussian2", "gaussian1", "twomoons"]
-    model_var_type = "learned"
-    l = [0.0, 0.25, 0.5, 0.75, 1.0]
-    training_iterations = 10
-    path_to_save = lambda dataset, l_val: f"images/train/experiment12/{dataset}_{l_val}/"
-    path_to_image = lambda dataset: f"/dcs/22/u2211900/ddpm-torch/images/train/{dataset}/50.jpg" #this should match with number of epochs in train_toy.py
-    for dataset in tqdm(datasets):
-        for l_val in tqdm(l):
-            try:
-                many_iterations(training_iterations, l_val, path_to_save(dataset, l_val), path_to_image(dataset), model_var_type, dataset)    
-            except Exception as e:
-                print(f"error in dataset {dataset} and l value {l_val}")
-                traceback.print_exc()
+    # datasets = ["gaussian8", "gaussian25", "swissroll", "gaussian2", "gaussian1", "twomoons"]
+    # model_var_type = "learned"
+    # l = [0.0, 0.25, 0.5, 0.75, 1.0]
+    # training_iterations = 10
+    # path_to_save = lambda dataset, l_val: f"images/train/experiment12/{dataset}_{l_val}/"
+    # path_to_image = lambda dataset: f"/dcs/22/u2211900/ddpm-torch/images/train/{dataset}/50.jpg" #this should match with number of epochs in train_toy.py
+    # for dataset in tqdm(datasets):
+    #     for l_val in tqdm(l):
+    #         try:
+    #             many_iterations(training_iterations, l_val, path_to_save(dataset, l_val), path_to_image(dataset), model_var_type, dataset)    
+    #         except Exception as e:
+    #             print(f"error in dataset {dataset} and l value {l_val}")
+    #             traceback.print_exc()
+
+
+    many_iterations(10, 1, "images/train/experiment12/gaussian8_1/", "/dcs/22/u2211900/ddpm-torch/images/train/gaussian8/50.jpg", "gaussian8")
 
 # compare wasserstein distance between real and synthetic data
 

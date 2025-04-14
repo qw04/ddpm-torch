@@ -1,36 +1,38 @@
-if __name__ == "__main__":
-    import math
-    import numpy as np
-    import os
-    import torch
-    from PIL import Image
-    from argparse import ArgumentParser
-    from copy import deepcopy
-    from ddpm_torch import *
-    from ddpm_torch.metrics import *
-    from functools import partial
-    from torch.utils.data import Dataset, Subset, DataLoader
-    from torchvision import transforms
-    from tqdm import tqdm
+import math
+import numpy as np
+import os
+import torch
+from PIL import Image
+from argparse import ArgumentParser
+from copy import deepcopy
+from ddpm_torch import *
+from ddpm_torch.metrics import *
+from functools import partial
+from torch.utils.data import Dataset, Subset, DataLoader
+from torchvision import transforms
+from tqdm import tqdm
 
+
+def main(sample):
     parser = ArgumentParser()
 
     parser.add_argument("--root", default="~/datasets", type=str)
-    parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="cifar10")
+    parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="mnist")
     parser.add_argument("--eval-batch-size", default=512, type=int)
-    parser.add_argument("--eval-total-size", default=5000, type=int)
+    parser.add_argument("--eval-total-size", default=1000, type=int)
     parser.add_argument("--num-workers", default=4, type=int)
     parser.add_argument("--nhood-size", default=3, type=int)
-    parser.add_argument("--row-batch-size", default=10000, type=int)
-    parser.add_argument("--col-batch-size", default=10000, type=int)
+    parser.add_argument("--row-batch-size", default=100, type=int)
+    parser.add_argument("--col-batch-size", default=100, type=int)
     parser.add_argument("--device", default="cuda:0", type=str)
     parser.add_argument("--precomputed-dir", default="./precomputed", type=str)
     parser.add_argument("--metrics", nargs="+", default=["fid", "pr"], type=str)
     parser.add_argument("--seed", default=1234, type=int)
-    parser.add_argument("--sample-folder", default="images/train/cifar10", type=str)
+    parser.add_argument("--sample-folder", default="images/train/mnist", type=str)
     parser.add_argument("--num-gpus", default=1, type=int)
 
     args = parser.parse_args()
+    args.sample_folder = sample
 
     root = os.path.expanduser(args.root)
     dataset = args.dataset
@@ -139,3 +141,6 @@ if __name__ == "__main__":
             print(f"{metric.upper()}: {result}")
             result_dict[metric] = result
         f.write(str(result_dict))
+
+if __name__ == "__main__":
+    main()

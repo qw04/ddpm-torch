@@ -64,5 +64,50 @@ def main():
         
 
 
+def different_main():
+
+    path = "test4.txt"
+
+    with open(path, "r") as f:
+        data = f.readlines()
+    data = [x.strip() for x in data]
+    data = [x.split(", ") for x in data]
+    precision = [None] * 6
+    wasserstein = [None] * 6
+    recall = [None] * 6
+    for line in data:
+        iteration = int(line[2].split(": ")[1])
+        precision[iteration] = float(line[4].split(": ")[1][1:-1])
+        wasserstein[iteration] = float(line[3].split(": ")[1])
+        recall[iteration] = float(line[5].split(": ")[1][1:-1])
+
+
+    plt.figure("Precision")
+    plt.plot(precision)
+    plt.xlabel("Iterations")
+    plt.ylabel("Precision")
+    plt.title("Precision vs Iterations")
+    plt.savefig("plots/precision.png")
+
+    plt.figure("Wasserstein")
+    plt.plot(wasserstein)
+    plt.xlabel("Iterations")
+    plt.ylabel("Wasserstein Distance")
+    plt.title("Wasserstein Distance vs Iterations")
+    plt.savefig("plots/wasserstein.png")
+
+    plt.figure("Recall")
+    plt.plot(recall)
+    plt.xlabel("Iterations")
+    plt.ylabel("Recall")
+    plt.title("Recall vs Iterations")
+    plt.savefig("plots/recall.png")
+
+
+
+
+    
+
+
 if __name__ == '__main__':
     main()

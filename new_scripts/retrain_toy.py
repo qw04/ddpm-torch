@@ -1,49 +1,60 @@
 import os
-from train_toy import TrainToy
+from new_scripts.train_toy import TrainToy
 from pathlib import Path
 import numpy as np
 from tqdm import tqdm
 from PIL import Image
 import math
 from scipy.stats import wasserstein_distance_nd
-from synthetic import SyntheticDataSampler
+from new_scripts.synthetic import SyntheticDataSampler
 
 
-def learn(l, synth, chkpt_path_load, **kwargs):
+def learn(l, synth, chkpt_path_load, training_iterations, **kwargs):
     train_toy = TrainToy(**kwargs)
     train_toy.set_data(synth, l)
     train_toy.set_parameters()
-    train_toy.set_checkpoint_path(synthetic_ratio = l)
+    chkpt_path_save = train_toy.set_checkpoint_path(synthetic_ratio = l, training_iterations = training_iterations)
     train_toy.set_image_directory()
     train_toy.set_scheduler()
     synth = train_toy.train(l, checkpoint_path_load=chkpt_path_load, bins=250, cmap="magma")
-    return synth
+    return synth, chkpt_path_save
 
 
-def Algorithm(training_iterations, l, stdev, path, batch_size=100, timesteps=100, model_var_type="fixed-small"):
+def Algorithm(training_iterations, l, path):
     
     path_to_image = r"/dcs/22/u2211900/ddpm-torch/images/train/gaussian2/200.jpg"
-    synth_paths = [f"synth/{l}/{i}.txt" for i in range(training_iterations+1)]
+    synth_paths = [f"synth\\{l}\\{i}.txt" for i in range(training_iterations+1)]
 
 
     if not os.path.exists(path):  os.makedirs(path)
     print(os.path.exists(path))
 
     print("Training on Real Data")
-    synthetic_data_sampler = SyntheticDataSampler(dataset_name, [], [i*[1] for i in range(training_iterations+1)], training_iterations)
+    synthetic_data_sampler = SyntheticDataSampler("gaussian8", [], [i*[1] for i in range(training_iterations+1)], training_iterations)
+    synth_sampler, chkpt_path_save = learn(0.0, synthetic_data_sampler, None, 0, epochs=500)
     
-    synth = learn(l, )
+    # save sampled data into synthpaths
+    # file = open(synth_paths[0], "w")
+    # file.close()
+    # np.savetxt(synth_paths[0], synth_sampler(2000))
+
+    # synthetic_data_sampler.load_checkpoint_from_partial(synth_paths[0], synth_sampler)
     
-    Image.open(path_to_image).save(rf"{path}/0.jpg")    
+    # Image.open(path_to_image).save(rf"{path}/0.jpg")    
     
-    for t in tqdm(range(training_iterations)):
-        synth = learn(l, synth, stdev, batch_size, timesteps, model_var_type)
-        Image.open(path_to_image).save(rf"{path}/{str(t+1)}.jpg")
+    # for t in tqdm(range(1, training_iterations)):
+    #     synth_sampler, chkpt_path_save = learn(l, synthetic_data_sampler, chkpt_path_save, t, epochs=10)
+    #     synthetic_data_sampler.increment_iteration()
+    #     file = open(synth_paths[t], "w")
+    #     file.close()
+    #     np.savetxt(synth_paths[t], synth_sampler(2000))
+
+    #     synthetic_data_sampler.load_checkpoint_from_partial(synth_paths[t+1], synth_sampler)
+    #     Image.open(path_to_image).save(rf"{path}/{str(t+1)}.jpg")
         
 
 def main():
-
-    Algorithm(training_iterations=10, l=1.0, stdev=0.25, path="images/train/experiment11/", batch_size=200, timesteps=200, model_var_type="learned") # shouldn't collapse
+    Algorithm(training_iterations=10, l=1.0, path="images/train/experiment11/") # shouldn't collapse
 
 
     # model_mean_type = eps

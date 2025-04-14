@@ -53,6 +53,29 @@ def main():
 
 
 
+def different_main():
+    synth_paths = [f"synth\\{1.0}\\{i}.txt" for i in range(6)]
+    temp = []
+    for file in tqdm(synth_paths):
+        iteration = int(file.split("\\")[2].split(".")[0])
+        l_val = file.split("\\")[1]
+        synth = np.loadtxt(file)[:1000]
+        dataset = "gaussian2"
+        data = Gaussian2(1000)
+
+        wasserstein_distance = wasserstein_distance_nd(data.data, synth)
+        print("wasserstein distance: ", wasserstein_distance)
+        state = knn_precision_recall_features(data.data, synth)        
+        precision, recall = state['precision'], state['recall']
+        print("precision: ", precision)
+        print("recall: ", recall)
+                
+        temp_string = f"dataset: {dataset}, l: {l_val}, iteration: {iteration}, wasserstein distance: {wasserstein_distance}, precision: {precision}, recall: {recall}"
+        print(temp_string, flush=True)
+        temp.append(temp_string)
+
+    np.savetxt("test4.txt", temp, fmt="%s")
+
 # improved precision and recall github code
 def knn_precision_recall_features(ref_features, eval_features, nhood_sizes=[3],
                                   row_batch_size=10000, col_batch_size=50000, num_gpus=1):

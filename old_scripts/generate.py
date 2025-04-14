@@ -8,7 +8,7 @@ import uuid
 from PIL import Image
 from argparse import ArgumentParser
 from concurrent.futures import ThreadPoolExecutor
-from ddim import DDIM, get_selection_schedule
+from old_scripts.ddim import DDIM, get_selection_schedule
 from ddpm_torch import *
 from multiprocessing.sharedctypes import Synchronized
 from tqdm import tqdm
@@ -69,6 +69,7 @@ def generate(rank, args, counter=0):
     folder_name = os.path.basename(chkpt_path)[:-3]  # truncated at file extension
     use_ema = meta_config["train"].get("use_ema", args.use_ema)
 
+    print(chkpt_path)
     state_dict = torch.load(chkpt_path, map_location=device)
     try:
         if use_ema:
@@ -88,7 +89,8 @@ def generate(rank, args, counter=0):
         model.load_state_dict(state_dict)
         del state_dict
         print("succeeded!")
-    except RuntimeError:
+    except RuntimeError as e:
+        raise e
         print("failed!")
         exit(1)
 
@@ -135,12 +137,12 @@ def generate(rank, args, counter=0):
                 pbar.update(1)
 
 
-def main():
+def main(chkpt):
     parser = ArgumentParser()
-    parser.add_argument("--config-path", type=str, help="path to the configuration file")
+    parser.add_argument("--config-path", type=str, default="mnist.json",help="path to the configuration file")
     parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="cifar10")
-    parser.add_argument("--batch-size", default=128, type=int)
-    parser.add_argument("--total-size", default=5000, type=int)
+    parser.add_argument("--batch-size", default=125, type=int)
+    parser.add_argument("--total-size", default=1000, type=int)
     parser.add_argument("--config-dir", default="./configs", type=str)
     parser.add_argument("--chkpt-dir", default="./chkpts", type=str)
     parser.add_argument("--chkpt-path", default="./chkpts/cifar10/cifar10_1000.pt", type=str)
@@ -157,21 +159,25 @@ def main():
 
     args = parser.parse_args()
 
-    world_size = args.world_size = args.num_gpus or 1
-    local_total_size = args.local_total_size = args.total_size // world_size
-    batch_size = args.batch_size
-    remainder = args.total_size % world_size
-    num_batches = math.ceil((local_total_size + 1) / batch_size) * remainder
-    num_batches += math.ceil(local_total_size / batch_size) * (world_size - remainder)
-    args.num_batches = num_batches
+    args.chkpt_path = chkpt
+    args.use_ddim = False
+    args.use_ema = False
 
-    if world_size > 1:
-        mp.set_start_method("spawn")
-        counter = mp.Value("i", 0)
-        mp.Process(target=progress_monitor, args=(num_batches, counter), daemon=True).start()
-        mp.spawn(generate, args=(args, counter), nprocs=world_size)
-    else:
-        generate(0, args)
+    # world_size = args.world_size = args.num_gpus or 1
+    # local_total_size = args.local_total_size = args.total_size // world_size
+    # batch_size = args.batch_size
+    # remainder = args.total_size % world_size
+    # num_batches = math.ceil((local_total_size + 1) / batch_size) * remainder
+    # num_batches += math.ceil(local_total_size / batch_size) * (world_size - remainder)
+    # args.num_batches = num_batches
+
+    # if world_size > 1:
+    #     mp.set_start_method("spawn")
+    #     counter = mp.Value("i", 0)
+    #     mp.Process(target=progress_monitor, args=(num_batches, counter), daemon=True).start()
+    #     mp.spawn(generate, args=(args, counter), nprocs=world_size)
+    # else:
+    generate(0, args)
 
 
 if __name__ == "__main__":

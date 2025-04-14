@@ -3,6 +3,7 @@ import numpy as np
 import torch
 from sklearn.datasets import make_swiss_roll, make_moons
 from torch.utils.data import Dataset
+from new_scripts.synthetic import SyntheticDataSampler
 
 __all__ = ["Gaussian8", "Gaussian25", "SwissRoll", "Gaussian2", "Gaussian1", "TwoMoons", "DataStreamer"]
 
@@ -12,6 +13,7 @@ class ToyDataset(Dataset):
         self.noise = stdev
         self.random_state = random_state
         self.stdev = self._calc_stdev()
+        self.data = self.sample(1000)
         
     def _calc_stdev(self):
         pass
@@ -165,9 +167,9 @@ class DataStreamer:
 
         while cnt < self.num_batches:
             num_synthetic_samples = int(math.floor(self.synthetic_ratio * self.batch_size))
-            num_real_samples = self.batch_size - synthetic_samples
-            synthetic_samples = self.synthetic_data_sampler.sample(synthetic_samples)
-            real_samples = self.dataset.sample(real_samples)
+            num_real_samples = self.batch_size - num_synthetic_samples
+            synthetic_samples = self.synthetic_data_sampler.sample(num_synthetic_samples)
+            real_samples = self.dataset.sample(num_real_samples)
             yield torch.from_numpy(np.concatenate([synthetic_samples, real_samples], axis=0))
 
             cnt += 1

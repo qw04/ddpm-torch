@@ -7,6 +7,7 @@ from ddpm_torch.utils import seed_all, infer_range
 from torch.optim import Adam, lr_scheduler
 from random import randint
 from argparse import ArgumentParser
+from functools import partial
 
 def print_centre_counts(synth):
     modes = [(math.cos(0.25 * t * math.pi), math.sin(0.25 * t * math.pi)) for t in range(8)]
@@ -24,10 +25,10 @@ class TrainToy:
         parser = ArgumentParser()
         
         # neural network parameters
-        parser.add_argument("--dataset", choices=["gaussian8", "gaussian25", "swissroll", "gaussian2", "gaussian1"], default="gaussian2")
+        parser.add_argument("--dataset", choices=["gaussian8", "gaussian25", "swissroll", "gaussian2", "gaussian1"], default="gaussian8")
         parser.add_argument("--size", default=30000, type=int)
         parser.add_argument("--root", default="~/datasets", type=str, help="root directory of datasets")
-        parser.add_argument("--epochs", default=50, type=int, help="total number of training epochs")
+        parser.add_argument("--epochs", default=100, type=int, help="total number of training epochs")
         parser.add_argument("--lr", default=0.001, type=float, help="learning rate")
         parser.add_argument("--beta1", default=0.9, type=float, help="beta_1 in Adam")
         parser.add_argument("--beta2", default=0.999, type=float, help="beta_2 in Adam")
@@ -39,15 +40,15 @@ class TrainToy:
         parser.add_argument("--beta-schedule", choices=["quad", "linear", "warmup10", "warmup50", "jsd"], default="linear")
         parser.add_argument("--beta-start", default=0.001, type=float)
         parser.add_argument("--beta-end", default=0.2, type=float)
-        parser.add_argument("--model-mean-type", choices=["mean", "x_0", "eps"], default="eps", type=str)
-        parser.add_argument("--model-var-type", choices=["learned", "fixed-small", "fixed-large"], default="learned", type=str)  # noqa
+        parser.add_argument("--model-mean-type", choices=["mean", "x_0", "eps"], default="mean", type=str)
+        parser.add_argument("--model-var-type", choices=["learned", "fixed-small", "fixed-large"], default="fixed-small", type=str)  # noqa
         parser.add_argument("--loss-type", choices=["kl", "mse"], default="kl", type=str)
 
         # saving parameters
         parser.add_argument("--image-dir", default="./images/train", type=str)
         parser.add_argument("--chkpt-dir", default="./chkpts", type=str)
-        parser.add_argument("--chkpt-intv", default=25, type=int, help="frequency of saving a checkpoint")
-        parser.add_argument("--eval-intv", default=25, type=int)
+        parser.add_argument("--chkpt-intv", default=10, type=int, help="frequency of saving a checkpoint")
+        parser.add_argument("--eval-intv", default=10, type=int)
         parser.add_argument("--seed", default=1234, type=int, help="random seed")
         parser.add_argument("--resume", action="store_true", default=True, help="to resume training from a checkpoint")
         parser.add_argument("--device", default="cuda:0", type=str)
@@ -91,7 +92,8 @@ class TrainToy:
         # checkpoint path
         if not os.path.exists(self.args.chkpt_dir):
             os.makedirs(self.args.chkpt_dir)
-        self.chkpt_path = os.path.join(self.args.chkpt_dir, "ddpm__" + "__".join([f"{key}_{kwards[key]}" for value in kwargs.keys()]) + ".pt")
+        self.chkpt_path = os.path.join(self.args.chkpt_dir, "ddpm__" + "__".join([f"{key}_{kwargs[key]}" for key in kwargs.keys()]) + ".pt")
+        return self.chkpt_path
 
     def set_image_directory(self):
         # set up image directory
@@ -136,6 +138,7 @@ class TrainToy:
 
         if self.args.resume:
             try:
+                if checkpoint_path_load is None: raise FileNotFoundError
                 trainer.load_checkpoint(checkpoint_path_load)
                 print(f"Resume traing : {self.args.resume} from {checkpoint_path_load}")
             except FileNotFoundError:
@@ -155,20 +158,23 @@ class TrainToy:
         return partial(sample_fn, diffusion=self.diffusion, model=self.model, shape_ = trainer.shape, device=self.device)
 
 
-if __name__ == "__main__":
-    l = 1
-    synth = []
+def main():
+    l = 0
+    synth = None
     stdev = -1
     batch_size=100
     timesteps=100
-    model_var_type="fixed-small"
+    model_var_type="fixed-large"
     BINS = 250
     CMAP = "magma"
 
     train_toy = TrainToy(batch_size=batch_size, timesteps=timesteps, model_var_type=model_var_type)
-    train_toy.set_data(l, synth, stdev)
+    train_toy.set_data(synthetic_data_sampler=synth, synthetic_ratio=l)
     train_toy.set_parameters()
-    train_toy.set_checkpoint_path(l, stdev, model_var_type)
+    train_toy.set_checkpoint_path(l = l)
     train_toy.set_image_directory()
     train_toy.set_scheduler()
     synth = train_toy.train(l, BINS, CMAP)
+
+if __name__ == "__main__":
+    main()

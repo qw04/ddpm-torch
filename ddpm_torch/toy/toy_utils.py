@@ -70,10 +70,10 @@ class Trainer:
         for e in range(self.start_epoch, self.epochs):
             self.stats.reset()
             self.model.train()
-            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs", disable=True) as t:
+            with tqdm(self.trainloader, desc=f"{e + 1}/{self.epochs} epochs") as t:
                 for i, x in enumerate(t):
                     self.step(x.to(self.device)) # training once
-                    t.set_postfix(self.current_stats)
+                    # t.set_postfix(self.current_stats)
                     if i == len(self.trainloader) - 1:
                         
                         eval_results = dict()
@@ -89,7 +89,7 @@ class Trainer:
                         results = dict()
                         results.update(self.current_stats)
                         results.update(eval_results)
-                        t.set_postfix(results)
+                        # t.set_postfix(results)
 
             # adjust learning rate every epoch before checkpoint
             self.scheduler.step()
