@@ -4,6 +4,7 @@ import numpy as np
 from tqdm import tqdm
 from PIL import Image
 import math
+import random
 
 
 class SyntheticDataSampler:
@@ -16,7 +17,7 @@ class SyntheticDataSampler:
         self.current_iteration = current_iteration
         self.total_iterations = len(schedule)
     
-    def load_checkpoint_from_path(self, chkpt_path):
+    def load_checkpoint_from_path(self, chkpt_path, learn):
         self.chkpt_paths.append(chkpt_path)
         chkpt = learn(0, self, chkpt_path, epochs=0, resume=True)
         self.chkpts.append(chkpt)
