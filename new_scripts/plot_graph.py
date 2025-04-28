@@ -45,7 +45,7 @@ def main():
         key = key.replace(": ", "_")
         plt.figure(key)
         plt.scatter(iterations(value), precision(value), label=key)
-        plt.xlabel("Iterations")
+        plt.xlabel("Iterations")    
         plt.ylabel("Precision")
         plt.title(f"Precision vs Iterations")
         plt.savefig(rf"{path_to_save_precision}//{key}.png")

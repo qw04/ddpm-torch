@@ -23,14 +23,15 @@ def one_iteration(l, synth, model_var_type, dataset, batch_size = 100, timesteps
     return synth
 
 def many_iterations(training_iterations, l, path_to_save, path_to_image, dataset, batch_size=200, timesteps=200):
-    if not os.path.exists(path_to_save): 
-        os.makedirs(path_to_save)
+    if not os.path.exists(path_to_save):  os.makedirs(path_to_save)
+    
     synth_path = os.path.join("synth/", path_to_save)
-    if not os.path.exists(synth_path):
-        os.makedirs(synth_path)
+    if not os.path.exists(synth_path): os.makedirs(synth_path)
+
     size = 30000 # should match up with value in train_toy.py
     synth = one_iteration(l, [], model_var_type, dataset, batch_size, timesteps)
     print(len(synth))
+    
     np.savetxt(rf"{synth_path}/0.txt", synth)
     synth = synth[:int(np.floor(l * size))]
     Image.open(path_to_image).save(rf"{path_to_save}/0.jpg")    

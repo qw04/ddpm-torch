@@ -102,7 +102,7 @@ class TrainToy:
             os.makedirs(self.image_dir)
 
     def set_scheduler(self): # scheduler
-        self.scheduler = lr_scheduler.LambdaLR(optimizer, lr_lambda=lambda t: min((t + 1) /self.args.lr_warmup, 1.0)) if self.args.lr_warmup > 0 else None
+        self.scheduler = lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lambda t: min((t + 1) /self.args.lr_warmup, 1.0)) if self.args.lr_warmup > 0 else None
 
     def train(self, synthetic_ratio, checkpoint_path_load, bins=100, cmap="Blues"):
         # load trainer
