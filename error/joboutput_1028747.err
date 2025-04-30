@@ -1,37 +1,0 @@
-  0%|          | 0/5 [00:00<?, ?it/s]
-121/170 epochs:   0%|          | 0/468 [00:00<?, ?it/s][A121/170 epochs:   0%|          | 0/468 [00:00<?, ?it/s]
-  0%|          | 0/5 [01:47<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
-    train()
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 31, in main
-    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 27, in Algorithm
-    synth = learn(synth, l, epochs=EPOCHS)
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
-    return f(*args, **kwargs)
-  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 330, in main
-    synth = train(args=args, synth=synth, l=l)
-  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 239, in train
-    trainer.train(evaluator, chkpt_path=chkpt_path, image_dir=image_dir)
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/utils/train.py", line 213, in train
-    self.step(x.to(self.device), global_steps=global_steps)
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/utils/train.py", line 151, in step
-    loss = self.loss(x).mean()
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/utils/train.py", line 143, in loss
-    loss = self.diffusion.train_losses(self.model, **self.get_input(x))
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/diffusion.py", line 236, in train_losses
-    model_out = denoise_fn(x_t, t)
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/models/unet.py", line 210, in forward
-    hs = [self.in_conv(x)]
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1532, in _wrapped_call_impl
-    return self._call_impl(*args, **kwargs)
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/nn/modules/module.py", line 1541, in _call_impl
-    return forward_call(*args, **kwargs)
-  File "/dcs/22/u2211900/ddpm-torch/ddpm_torch/modules.py", line 121, in forward
-    return F.conv2d(
-RuntimeError: Input type (double) and bias type (float) should be the same

@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/main.py", line 5, in <module>
-    train()
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 33, in main
-    Algorithm(training_iterations=5, l=1.0, path="images/train/experiment13/full/")
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 24, in Algorithm
-    Image.close()
-AttributeError: module 'PIL.Image' has no attribute 'close'

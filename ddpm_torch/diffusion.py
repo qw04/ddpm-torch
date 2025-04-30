@@ -151,7 +151,10 @@ class GaussianDiffusion:
 
     def p_sample_step(self, denoise_fn, x_t, t, clip_denoised=True, return_pred=False, generator=None):
         model_mean, _, model_logvar, pred_x_0 = self.p_mean_var(denoise_fn, x_t, t, clip_denoised=clip_denoised, return_pred=True)
-        noise = torch.empty_like(x_t).normal_(generator=torch.Generator(torch.device("cuda:0")).manual_seed(randint(0, 1000)))
+        try:
+            noise = torch.empty_like(x_t).normal_(generator=torch.Generator(torch.device("cuda:0")).manual_seed(randint(0, 1000)))
+        except Exception as e:
+            noise = torch.empty_like(x_t).normal_(generator=torch.Generator(torch.device("cpu")).manual_seed(randint(0, 1000)))
         nonzero_mask = (t > 0).reshape((-1,) + (1,) * (x_t.ndim - 1)).to(x_t)
         sample = model_mean + nonzero_mask * torch.exp(0.5 * model_logvar) * noise
         return (sample, pred_x_0) if return_pred else sample

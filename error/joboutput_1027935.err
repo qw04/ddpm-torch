@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/main.py", line 2, in <module>
-    from old_scripts.evaluate import main as evaluate
-ModuleNotFoundError: No module named 'old_scripts.evaluate'

@@ -1,6 +1,0 @@
-dataset: gaussian2, l: 1.0, iteration: 0, wasserstein distance: 0.66782984715392, precision: [0.996], recall: [0.805]
-dataset: gaussian2, l: 1.0, iteration: 1, wasserstein distance: 0.6611060566285327, precision: [0.992], recall: [0.902]
-dataset: gaussian2, l: 1.0, iteration: 2, wasserstein distance: 0.7865699356708628, precision: [0.992], recall: [0.905]
-dataset: gaussian2, l: 1.0, iteration: 3, wasserstein distance: 0.7624017315216713, precision: [0.991], recall: [0.9]
-dataset: gaussian2, l: 1.0, iteration: 4, wasserstein distance: 0.9423603278667335, precision: [0.996], recall: [0.802]
-dataset: gaussian2, l: 1.0, iteration: 5, wasserstein distance: 0.8467098213057201, precision: [0.995], recall: [0.945]

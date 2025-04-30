@@ -9,23 +9,12 @@ from random import randint
 from argparse import ArgumentParser
 from functools import partial
 
-def print_centre_counts(synth):
-    modes = [(math.cos(0.25 * t * math.pi), math.sin(0.25 * t * math.pi)) for t in range(8)]
-    counter = [0] * 8
-    for (i, j) in synth:
-        dist = [(i - x) ** 2 + (j - y) ** 2 for (x, y) in modes]
-        index = dist.index(min(dist))
-        counter[index] += 1
-
-    for i, j in zip(modes, counter):
-        print(i, j)
-
 class TrainToy:
     def __init__(self, **kwargs):
         parser = ArgumentParser()
         
         # neural network parameters
-        parser.add_argument("--dataset", choices=["gaussian8", "gaussian25", "swissroll", "gaussian2", "gaussian1"], default="gaussian8")
+        parser.add_argument("--dataset", choices=["gaussian8", "poisson_glm", "creditcard"], default="gaussian8") # changes here
         parser.add_argument("--size", default=30000, type=int)
         parser.add_argument("--root", default="~/datasets", type=str, help="root directory of datasets")
         parser.add_argument("--epochs", default=100, type=int, help="total number of training epochs")
@@ -47,11 +36,11 @@ class TrainToy:
         # saving parameters
         parser.add_argument("--image-dir", default="./images/train", type=str)
         parser.add_argument("--chkpt-dir", default="./chkpts", type=str)
-        parser.add_argument("--chkpt-intv", default=10, type=int, help="frequency of saving a checkpoint")
-        parser.add_argument("--eval-intv", default=10, type=int)
+        parser.add_argument("--chkpt-intv", default=10000, type=int, help="frequency of saving a checkpoint")
+        parser.add_argument("--eval-intv", default=10000, type=int)
         parser.add_argument("--seed", default=1234, type=int, help="random seed")
-        parser.add_argument("--resume", action="store_true", default=True, help="to resume training from a checkpoint")
-        parser.add_argument("--device", default="cuda:0", type=str)
+        parser.add_argument("--resume", action="store_true", default=False, help="to resume training from a checkpoint")
+        parser.add_argument("--device", default="cpu", type=str) #default="cuda:0"
         parser.add_argument("--mid-features", default=128, type=int)
         parser.add_argument("--num-temporal-layers", default=3, type=int)
 
@@ -60,16 +49,20 @@ class TrainToy:
             setattr(self.args, key, value)
 
         if self.args.model_var_type == "learned": self.args.loss_type = "kl"    
-    
-    def set_data(self, synthetic_data_sampler, synthetic_ratio):
+
         seed_all(self.args.seed)
-        self.in_features = 2
+        self.in_features = 2 if self.args.dataset != "creditcard" else 31
         self.root = os.path.expanduser(self.args.root)
-        self.num_batches = self.args.size // self.args.batch_size
-        
+    
+    def set_data(self, synth, accumulate=False):
+        if accumulate:
+            self.num_batches = (self.args.size + len(synth)) // self.args.batch_size
+        else:
+            self.num_batches = self.args.size // self.args.batch_size
+        # synth has correct size according to the synthetic ratio
         self.trainloader = DataStreamer(
             dataset=self.args.dataset, batch_size=self.args.batch_size, num_batches=self.num_batches, 
-            synthetic_data_sampler=synthetic_data_sampler, synthetic_ratio=synthetic_ratio
+            synth=synth, accumulate=accumulate
             )
             
     def set_parameters(self, model = None):
@@ -104,7 +97,7 @@ class TrainToy:
     def set_scheduler(self): # scheduler
         self.scheduler = lr_scheduler.LambdaLR(self.optimizer, lr_lambda=lambda t: min((t + 1) /self.args.lr_warmup, 1.0)) if self.args.lr_warmup > 0 else None
 
-    def train(self, synthetic_ratio, checkpoint_path_load, bins=100, cmap="Blues"):
+    def train(self, checkpoint_path_load, bins=100, cmap="Blues"):
         # load trainer
         grad_norm = 0  # gradient global clipping is disabled
         eval_intv = self.args.eval_intv
@@ -129,12 +122,12 @@ class TrainToy:
         value_range = (xlim, ylim)
         true_data = iter(self.trainloader)
         
-        evaluator = Evaluator(
-            true_data=np.concatenate([next(true_data) for _ in range(max_eval_count // eval_batch_size)]),
-            eval_batch_size=eval_batch_size, 
-            max_eval_count=max_eval_count, 
-            value_range=value_range
-        )
+        # evaluator = Evaluator(
+        #     true_data=np.concatenate([next(true_data) for _ in range(max_eval_count // eval_batch_size)]),
+        #     eval_batch_size=eval_batch_size, 
+        #     max_eval_count=max_eval_count, 
+        #     value_range=value_range
+        # )
 
         if self.args.resume:
             try:
@@ -145,7 +138,7 @@ class TrainToy:
                 print("Checkpoint file does not exist!")
                 print("Starting from scratch...")
 
-        trainer.train(evaluator, chkpt_path=self.chkpt_path, image_dir=self.image_dir, bins=bins, cmap=cmap)
+        trainer.train(evaluator=None, chkpt_path=self.chkpt_path, image_dir=self.image_dir, bins=bins, cmap=cmap)
         
         
         def sample_fn(n, diffusion, model, shape_, device):
@@ -157,24 +150,18 @@ class TrainToy:
 
         return partial(sample_fn, diffusion=self.diffusion, model=self.model, shape_ = trainer.shape, device=self.device)
 
-
-def main():
-    l = 0
-    synth = None
-    stdev = -1
-    batch_size=100
-    timesteps=100
-    model_var_type="fixed-large"
+def learn(synth=[], accumulate=False, **kwards):
     BINS = 250
     CMAP = "magma"
 
-    train_toy = TrainToy(batch_size=batch_size, timesteps=timesteps, model_var_type=model_var_type)
-    train_toy.set_data(synthetic_data_sampler=synth, synthetic_ratio=l)
+    train_toy = TrainToy(**kwards)
+    train_toy.set_data(synth=synth, accumulate=accumulate)
     train_toy.set_parameters()
-    train_toy.set_checkpoint_path(l = l)
+    train_toy.set_checkpoint_path()
     train_toy.set_image_directory()
     train_toy.set_scheduler()
-    synth = train_toy.train(l, BINS, CMAP)
+    synth = train_toy.train(BINS, CMAP)
+    return synth
 
 if __name__ == "__main__":
-    main()
+    learn()

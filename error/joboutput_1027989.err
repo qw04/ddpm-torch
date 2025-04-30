@@ -1,241 +1,0 @@
-  0%|          | 0/30 [00:00<?, ?it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 17%|█▋        | 5/30 [00:00<00:00, 47.22it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 33%|███▎      | 10/30 [00:00<00:00, 38.72it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 47%|████▋     | 14/30 [00:00<00:00, 36.48it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 60%|██████    | 18/30 [00:00<00:00, 37.59it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/1 [00:00<?, ?it/s][A  0%|          | 0/1 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 77%|███████▋  | 23/30 [00:00<00:00, 40.66it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/1 [00:00<?, ?it/s][A  0%|          | 0/1 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
- 97%|█████████▋| 29/30 [00:00<00:00, 43.96it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [00:00<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 36, in main
-    np.savetxt("working.txt", 0, fmt="%s")
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/numpy/lib/_npyio_impl.py", line 1573, in savetxt
-    raise ValueError(
-ValueError: Expected 1D or 2D array, got 0D array instead
-100%|██████████| 30/30 [00:00<00:00, 41.80it/s]

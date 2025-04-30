@@ -1,23 +1,13 @@
-# from old_scripts.train import main as train
-# from new_scripts.train_toy import main as train
-# from new_scripts.evaluate import different_main as evaluate
-# from new_scripts.mnist import main as train
-from new_scripts.plot_graph import different_main as plot
-# from new_scripts.retrain_toy import main as retrain
-# from tqdm import tqdm
-# import os
+# from new_scripts.plot_graph import main as plot_graph_main
+from new_scripts.plot_images import main as plot_images_main
+# from new_scripts.accumulate import main as accumulate_main
+# from new_scripts.curate import main as curate_main
+# from new_scripts.size_of_models import main as size_of_models_main
+# from new_scripts.multiple_models import main as multiple_models_main
 
-# from old_scripts.generate import main as generate
-# from old_scripts.eval import main as evaluate
-
-# paths = "chkpts/mnist"
-# for path in tqdm(os.listdir(paths)):
-#     if path.endswith(".pt"):
-#         print(path)
-#         generate(os.path.join(paths, path))
-#         evaluate(os.path.join(paths, path))
-
-# retrain()
-# train()
-# evaluate()
-plot()
+# plot_graph_main()
+plot_images_main()
+# accumulate_main()
+# curate_main()
+# size_of_models_main()
+# multiple_models_main()

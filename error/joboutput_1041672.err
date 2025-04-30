@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/main.py", line 6, in <module>
-    train()
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/mnist.py", line 35, in main
-    Algorithm(training_iterations=20, l=1.0, path="images/train/experiment13/full/")
-TypeError: Algorithm() missing 1 required positional argument: 'chkpt_path'

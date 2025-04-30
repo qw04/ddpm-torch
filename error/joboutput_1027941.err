@@ -1,10 +1,0 @@
-  0%|          | 0/30 [00:00<?, ?it/s]
-  0%|          | 0/11 [00:00<?, ?it/s][A  0%|          | 0/11 [02:08<?, ?it/s]
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 37, in main
-    state = knn_precision_recall_features(data.data, synth)
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 76, in knn_precision_recall_features
-    distance_block = DistanceBlockWithoutGPU(num_features)
-TypeError: __init__() missing 1 required positional argument: 'device'
-  3%|▎         | 1/30 [02:08<1:02:04, 128.42s/it]
-  0%|          | 0/11 [00:00<?, ?it/s][Aslurmstepd: error: *** JOB 1027941 ON gecko-02 CANCELLED AT 2025-01-26T01:46:22 ***

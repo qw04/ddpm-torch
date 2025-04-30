@@ -1,8 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 310, in <module>
-    main()
-  File "/dcs/22/u2211900/.local/lib/python3.9/site-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 347, in wrapper
-    return f(*args, **kwargs)
-  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 247, in main
-    parser.add_argument("--dataset", choices=DATASET_DICT.keys(), default="mnist")
-NameError: name 'DATASET_DICT' is not defined

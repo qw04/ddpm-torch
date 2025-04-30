@@ -1,4 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/old_scripts/train.py", line 12, in <module>
-    from .ddpm_torch import *
-ImportError: attempted relative import with no known parent package

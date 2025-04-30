@@ -1,1 +1,0 @@
-1/150 epochs:   0%|          | 0/468 [00:00<?, ?it/s]1/150 epochs:   0%|          | 0/468 [00:03<?, ?it/s, loss=0.999]1/150 epochs:   0%|          | 1/468 [00:03<24:54,  3.20s/it, loss=0.999]slurmstepd: error: *** JOB 1028394 ON gecko-03 CANCELLED AT 2025-01-26T19:42:15 ***

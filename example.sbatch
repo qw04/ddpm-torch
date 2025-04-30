@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-#SBATCH --job-name=example-gpu1   # Job name for tracking
-#SBATCH --partition=gecko         # Partition you wish to use (see above for list)
+#SBATCH --job-name=job          # Job name for tracking
+#SBATCH --partition=gecko       # Partition you wish to use (see above for list)
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=48      # Number of CPU threads used by your job
 #SBATCH --gres=gpu:1            # Number of GPUs to use 

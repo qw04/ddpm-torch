@@ -70,12 +70,14 @@ def infer_range(dataset):
     return xlim, ylim
 
 
-def save_scatterplot(fpath, x, y=None, xlim=None, ylim=(-1, 1), bins=100, cmap="Blues"):
+def save_scatterplot(fpath, dataset, x, y=None, xlim=None, ylim=(-1, 1), bins=100, cmap="Blues"):
+    print(dataset, flush=True)
+    if dataset == "creditcard":  return None
     if hasattr(x, "ndim"):
         x, y = split_squeeze(x) if x.ndim == 2 else (np.arange(len(x)), x)
     plt.figure(figsize=(6, 6))
-    # plt.scatter(x, y, s=0.5, alpha=0.7)
-    plt.hist2d(x, y, bins=bins, cmap=cmap)
+    plt.scatter(x, y, s=0.5, alpha=0.7)
+    # plt.hist2d(x, y, bins=bins, cmap=cmap)
 
     # set axes limits
     # if xlim is not None:

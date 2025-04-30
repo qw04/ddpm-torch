@@ -1,7 +1,0 @@
-Traceback (most recent call last):
-  File "/dcs/22/u2211900/ddpm-torch/main.py", line 2, in <module>
-    from new_scripts.evaluate import main as evaluate
-  File "/dcs/22/u2211900/ddpm-torch/new_scripts/evaluate.py", line 212
-    def __init__(self, num_features, device=):
-                                            ^
-SyntaxError: invalid syntax

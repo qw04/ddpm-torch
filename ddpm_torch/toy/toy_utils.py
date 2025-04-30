@@ -84,7 +84,8 @@ class Trainer:
 
                         x_gen = eval_results.pop("x_gen", None)
                         if x_gen is not None and image_dir:
-                            save_scatterplot(os.path.join(image_dir, f"{e + 1}.jpg"), x_gen, **plot_kwargs, bins=bins, cmap=cmap)
+                            if not os.path.exists(image_dir): os.makedirs(image_dir)
+                            save_scatterplot(self.trainloader.dataset.name, os.path.join(image_dir, f"{e + 1}.jpg"), x_gen, **plot_kwargs, bins=bins, cmap=cmap)
                         
                         results = dict()
                         results.update(self.current_stats)
